@@ -2,6 +2,10 @@ import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { profileImg } from "@/public/assets";
+import {motion} from "framer-motion";
+
+// variants
+import {fadeOut} from '../motion'
 
 const About = () => {
   return (
@@ -10,7 +14,14 @@ const About = () => {
     className="max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gab-8">
     
     <SectionTitle title="About me" titleNo="01" />
-    <div className="flex flex-col lgl:flex-row gap-16">
+    <motion.div 
+     variants={fadeOut('right', 0.2)}
+     initial='hidden'
+     whileInView={'show'}
+     viewport={{ once: false, amount: 0.1}}
+     exit="hidden"
+    
+    className="flex flex-col lgl:flex-row gap-16">
       <div className="w-full lgl:w-2/3 text-base text-textDark font-medium
       flex flex-col mt-5 gap-4">
         <p>
@@ -55,7 +66,7 @@ const About = () => {
         rounded-md group-hover:-translate-x-2 group-hover:-translate-y-2
         transition-transform duration-300"></div>
       </div>
-    </div>
+    </motion.div>
   </section>
   );
 };
