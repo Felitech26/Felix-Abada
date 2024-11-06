@@ -15,7 +15,7 @@ import {fadeOut} from '../motion'
 
 const Banner = () => {
   return <section id="home">
-  <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] bottom-0 xl:pt-[12rem] overflow-hidden">
+  <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] xl:pt-[12rem] overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
     <div className="mb-7">
@@ -46,7 +46,7 @@ const Banner = () => {
   initial="hidden"
   animate="show"
   exit="hidden"
-  className="text-base w-full md:w-[350px] text-textDark font-medium  mt-3 text-center"
+  className="text-base w-full md:w-[350px] font-titleFont font-medium text-textDark mt-3 text-center"
   >
   Driven by critical thinking and constant dedication, 
   I have had the opportunity to shape my path across with my 
