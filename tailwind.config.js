@@ -8,12 +8,7 @@ module.exports = {
       padding: '15px',
       center: true,
     },
-    maxWidth: {
-        container: "1440px",
-        contentContainer: "1140px",
-        containerSmall: "1024px",
-        containerxs: "768px",
-    },
+   
     extend: {
       screens: {
         xs: "320px",
@@ -31,10 +26,10 @@ module.exports = {
         titleFont: ["Inter", "sans-serif"],
       },
             colors: {
-        bodyColor: "#0c0c0c",
+        bodyColor: "#1b1d1d",
         textGreen: "#2DF9EC",
-        textLight: "#C6CCDE",
-        textDark: "#8892b0",
+        textLight: "#ffffff",
+        textDark: "#8f8f8f",
         hoverColor: "rgba(100,255,218,0.1)",
       },
     },

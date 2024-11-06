@@ -1,16 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Banner from '@/components/Banner';
-import About from '@/components/About';
-
 import Head from 'next/head'
 import {motion} from 'framer-motion'
-import Projects from '@/components/Projects';
 
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer'
 
 // variants
 import {fadeIn} from '../variants'
+
 
 
 
@@ -32,10 +28,9 @@ export default function Home() {
        <Navbar/>
         <div className="w-full overflow-hidden">
         <Banner />
-       
-       
         
-        </div>
+
+</div>
         
       </main>
     </>
