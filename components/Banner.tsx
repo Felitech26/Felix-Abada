@@ -15,7 +15,7 @@ import {fadeOut} from '../motion'
 
 const Banner = () => {
   return <section id="home">
-  <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] xl:pt-[12rem] overflow-hidden">
+  <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] bottom-0 xl:pt-[12rem] overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
     <div className="mb-7">
@@ -68,21 +68,21 @@ const Banner = () => {
   </div>
   <div className="flex flex-row mt-5 text-[#8a8a8a] 
      gap-3">
-      <a href="" className="px-3 py-3 border border-sm rounded-full 
+      <a href="https://www.instagram.com/" target="blank" className="px-3 py-3 border border-sm rounded-full 
       transition-all duration-500
       hover:text-textGreen hover:border-textGreen
        text-[#8a8a8a] border-[#8a8a8a]">
       <FaInstagram className="text-[18px]" />
       </a>
 
-      <a href="" className="px-3 py-3 border border-sm rounded-full 
+      <a href="https://github.com/Felitech26" target="blank" className="px-3 py-3 border border-sm rounded-full 
       transition-all duration-500
       hover:text-textGreen hover:border-textGreen
        text-[#8a8a8a] border-[#8a8a8a]">
       <TbBrandGithub className="text-[18px]" />
       </a>
      
-      <a href="" className="px-3 py-3 border border-sm rounded-full 
+      <a href="" target="blank" className="px-3 py-3 border border-sm rounded-full 
       transition-all duration-500
       hover:text-textGreen hover:border-textGreen
        text-[#8a8a8a] border-[#8a8a8a]">
