@@ -14,7 +14,7 @@ import {fadeIn} from '../variants'
 import {fadeOut} from '../motion'
 
 const Banner = () => {
-  return <section id="home">
+  return <section id="home" className="bottom-0">
   <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] xl:pt-[12rem] overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
@@ -54,17 +54,6 @@ const Banner = () => {
     {" "}   
           
  </motion.p>
- <div className="hidden">
- <a href="https://united-development-limited.vercel.app/" target="_blank">
-     <span className="text-textGreen inline-flex  relative cursor-pointer h-7
-     overflow-x-hidden group uppercase font-titleFont font-bold mt-5">
-     My Resume
-       <span className="absolute w-full h-[1px] bg-textGreen left-0 bottom-1
-       -translate-x-[110%] group-hover:translate-x-0 transition-transform
-       duration-500"></span>
-   </span>
-  </a>
- </div>
   </div>
   <div className="flex flex-row mt-5 text-[#8a8a8a] 
      gap-3">
@@ -123,7 +112,7 @@ const Banner = () => {
     <div className="flex justify-between items-center px-4">
       <h1 className="text-[18px] font-titleFont font-bold text-white">United Develpment Company</h1>
       <a className='hover:text-textGreen duration-300' 
-            href="https://united-development-limited.vercel.app/"
+            href="https://united-development-company.vercel.app/"
              target='_blank'>
               <RxOpenInNewWindow className="text-[20px]" />
              </a>
