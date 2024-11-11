@@ -6,6 +6,7 @@ import {motion} from 'framer-motion'
 
 // variants
 import {fadeIn} from '../variants'
+import Footer from '@/components/Footer';
 
 
 
@@ -26,12 +27,9 @@ export default function Home() {
        
        
        <Navbar/>
-        <div className="w-full overflow-hidden">
         <Banner />
-        
+       <Footer />
 
-</div>
-        
       </main>
     </>
   );
