@@ -7,15 +7,15 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 
 import { TbBrandGithub } from 'react-icons/tb'
-import { online } from "@/public/assets";
+
 
 // variants
 import {fadeIn} from '../variants'
 
 const Banner = () => {
-  return <section id="home" className="relative overflow-hidden bottom-0 z-50">
-  <div className="container mx-auto mdl:h-[100vh] lg:h-[80vh] xl:h-screen pt-[8rem] lg:pt-[7rem] xl:pt-[10rem] overflow-hidden">
-<div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
+  return <section id="home" className="relative overflow-hidden bottom-0">
+  <div className="container mx-auto pt-[8rem] bottom-0 lg:pt-[16rem] xl:pt-[12rem] relative overflow-hidden">
+<div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem] md:gap-[5rem]">
 <div className="flex flex-col justify-center items-center">
     <div className="mb-7">
         <Image  
@@ -47,8 +47,6 @@ const Banner = () => {
   exit="hidden"
   className="text-base w-full md:w-[350px] font-titleFont font-medium text-textDark mt-3 text-center"
   >
-     I am a developer based in Accra, Ghana focused on creating 
-     interactive digital experiences on the web.
   Driven by critical thinking and constant dedication, 
   I have had the opportunity to shape my path across with my 
   passion for Web Development.
@@ -137,11 +135,7 @@ const Banner = () => {
 </div>
 
 
-<div className="hidden xl:flex justify-center items-center py-5 mt-[1.5rem] gap-4">
-          <Image src={online} alt="online" 
-          className="w-[8px] mb-1"/> 
-          <h4 className="font-titleFont text-textDark font-semibold">Available for work</h4>
-        </div>
+
   </div>
  
   
