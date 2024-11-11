@@ -20,7 +20,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
       </Head>
-      <main className="w-full bottom-0 font-bodyFont bg-bodyColor
+      <main className="w-full bottom-0 font-bodyFont bg-bodyColor relative
        text-textLight overflow-x-hidden overflow-y-scroll scrollbar
        scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
        

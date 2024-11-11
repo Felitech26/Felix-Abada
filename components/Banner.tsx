@@ -11,10 +11,9 @@ import { online } from "@/public/assets";
 
 // variants
 import {fadeIn} from '../variants'
-import {fadeOut} from '../motion'
 
 const Banner = () => {
-  return <section id="home" className="bottom-0">
+  return <section id="home" className="relative overflow-hidden bottom-0">
   <div className="container mx-auto xl:h-screen pt-[8rem] lg:pt-[7rem] xl:pt-[12rem] overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
