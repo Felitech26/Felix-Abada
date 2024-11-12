@@ -15,7 +15,7 @@ import {fadeIn} from '../variants'
 const Banner = () => {
   return <section id="home" className="relative overflow-hidden bottom-0">
   <div className="container mx-auto pt-[8rem] bottom-0 lg:pt-[16rem] xl:pt-[12rem] relative overflow-hidden">
-<div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem] md:gap-[5rem]">
+<div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
     <div className="mb-7">
         <Image  
@@ -47,7 +47,7 @@ const Banner = () => {
   exit="hidden"
   className="text-base w-full md:w-[350px] font-titleFont font-medium text-textDark mt-3 text-center"
   >
-  Driven by critical thinking and constant dedication, 
+  I am a developer base in Ghana, driven by critical thinking and constant dedication, 
   I have had the opportunity to shape my path across with my 
   passion for Web Development.
     {" "}   
@@ -107,7 +107,7 @@ const Banner = () => {
 
   </div>
   <div className="w-full md:w-[410px] py-4 bg-white/[0.035] border border-gray-700 
-  rounded-[10px] border-opacity-10">
+  rounded-[10px] border-opacity-10 hover:translate-x-1 duration-300">
     <div className="flex justify-between items-center px-4">
       <h1 className="text-[18px] font-titleFont font-bold text-white">United Develpment Company</h1>
       <a className='hover:text-textGreen duration-300' 

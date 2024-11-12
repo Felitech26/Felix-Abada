@@ -31,7 +31,7 @@ export default function Home() {
         <div className="w-full relative overflow-hidden">
         <Banner />
         </div>
-        <div className='py-6 mt-[1rem] md:mt-[5rem] lg:mt-[12rem] relative overflow-hidden'>
+        <div className='py-6 mt-[1rem] relative overflow-hidden'>
         <div className="flex justify-center items-center gap-4">
           <Image src={online} alt="online" 
           className="w-[8px] mb-1"/> 
