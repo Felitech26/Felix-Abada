@@ -13,8 +13,8 @@ import { TbBrandGithub } from 'react-icons/tb'
 import {fadeIn} from '../variants'
 
 const Banner = () => {
-  return <section id="home" className="relative overflow-hidden bottom-0">
-  <div className="container mx-auto pt-[8rem] bottom-0 lg:pt-[16rem] xl:pt-[12rem] relative overflow-hidden">
+  return <div className="relative overflow-hidden bottom-0">
+  <div className="container mx-auto relative overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row justify-center items-center overflow-hidden gap-[3rem]">
 <div className="flex flex-col justify-center items-center">
     <div className="mb-7">
@@ -139,7 +139,7 @@ const Banner = () => {
   </div>
  
   
- </section>
+ </div>
   
 
 };

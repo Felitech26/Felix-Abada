@@ -22,24 +22,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.icon" />
       </Head>
-      <main className="w-full mdl:h-[100vh] xl:h-screen font-bodyFont bg-bodyColor relative
-       text-textLight overflow-x-hidden overflow-y-scroll scrollbar
+      <main className="w-full xl:h-screen font-bodyFont bg-bodyColor relative
+       text-textLight  scrollbar  overflow-hidden
        scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
        
        
        <Navbar/>
-        <div className="w-full relative overflow-hidden">
+        <div className="w-full relative overflow-hidden pt-[8rem] pb-[5rem] md:pt-[10rem] md:pb-[10rem]
+        lg:pt-[17rem] lg:pb-[17rem] xl:pt-[10rem] xl:pb-[5rem]">
         <Banner />
-        </div>
-        <div className='py-6 mt-[1rem] relative overflow-hidden'>
-        <div className="flex justify-center items-center gap-4">
-          <Image src={online} alt="online" 
-          className="w-[8px] mb-1"/> 
-          <h4 className="font-titleFont text-textDark font-semibold">Available for work</h4>
-        </div>
-        </div>
-       
-        
+        </div> 
       </main>
     </>
   );
