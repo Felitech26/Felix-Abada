@@ -23,19 +23,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.icon" />
       </Head>
-      <Navbar/>
+     
       <main className="w-full xl:h-screen font-bodyFont bg-bodyColor relative
        text-textLight scrollbar overflow-hidden
        scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
        
-       
+       <Navbar/>
        
         <div className="w-full relative overflow-hidden pt-[8rem] pb-[5rem] md:pt-[10rem] md:pb-[10rem]
         lg:pt-[17rem] lg:pb-[17rem] xl:pt-[10rem] xl:pb-[5rem]">
         <Banner />
         </div> 
+
+        <Footer />
       </main>
-      <Footer />
+     
     </>
   );
 };
