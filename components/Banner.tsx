@@ -1,3 +1,5 @@
+'use client';
+
 import {motion} from "framer-motion";
 import Image from "next/image";
 import { profileImg } from "@/public/assets";
@@ -7,10 +9,56 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 
 import { TbBrandGithub } from 'react-icons/tb'
+import Header3 from "./Header3";
 
 
-// variants
-import {fadeIn} from '../variants'
+const headerVariant2 = {
+  initial: {
+    y: "100%",
+  },
+  animate: {
+    y: 0,
+    transition: {
+      duration: 1.2,
+      delay: 0.25,
+      ease: [0.25, 1, 0.5, 1],
+    },
+  },
+};
+
+const headerVariant1 = {
+  initial: {
+    y: "100%",
+  },
+  animate: {
+    y: 0,
+    transition: {
+      duration: 1.2,
+      delay: 0.1,
+      ease: [0.25, 1, 0.5, 1],
+    },
+  },
+};
+
+const flash = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.7,
+      ease: [0.53, 0, 0.17, 1],
+    },
+  },
+};
+
+
+const topline1 = 'I am a developer base in Ghana, driven by';
+const topline2 = 'critical thinking and constant dedication,';
+const bottomline1 = 'I have had the opportunity to shape my path';
+const bottomline2 = 'with my passion for Web Development.';
 
 const Banner = () => {
   return <div className="relative overflow-hidden bottom-0">
@@ -26,33 +74,36 @@ const Banner = () => {
     </div> 
     <div className="flex flex-col justify-center items-center">
   <motion.h1
+     variants={headerVariant1}
+     initial="initial"
+     animate="animate"
    className="text-xl lgl:text-2xl font-titleFont font-bold">
     Felix Abada </motion.h1>
-  <p className="text-textDark text-lg font-medium mt-2 lgl:mt-4 capitalize"> full stack developer</p>
+  <motion.p 
+   variants={headerVariant2}
+   initial="initial"
+   animate="animate"
+  className="text-textDark text-lg font-medium mt-2 lgl:mt-4 capitalize"> full stack developer</motion.p>
 
   <motion.p 
-  variants={fadeIn('up', 0.4)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="text-base font-titleFont max-w-[400px] mt-2 font-medium"
+  variants={flash}
+  initial="initial"
+  animate="animate"
+  className="text-base font-titleFont mt-2 mb-4 font-medium"
   >
  PRODUCT DESIGN | BRANDING | STRATEGY   {" "}   
           
  </motion.p>
-  <motion.p 
-  variants={fadeIn('up', 0.4)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="text-base w-full md:w-[350px] font-titleFont font-medium text-textDark mt-3 text-center"
-  >
-  I am a developer base in Ghana, driven by critical thinking and constant dedication, 
-  I have had the opportunity to shape my path across with my 
-  passion for Web Development.
-    {" "}   
-          
- </motion.p>
+ <div>
+  <div>
+    <Header3 phrase={topline1} className="" />
+    <Header3 phrase={topline2} className="" />
+  </div>
+  <div>
+  <Header3 phrase={bottomline1} className="" />
+  <Header3 phrase={bottomline2} className="" />
+  </div>
+ </div>
   </div>
   <div className="flex flex-row mt-5 text-[#8a8a8a] 
      gap-3">
