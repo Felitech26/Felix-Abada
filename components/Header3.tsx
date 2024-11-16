@@ -18,7 +18,7 @@ function Header3({ phrase, className }: Header) {
   return (
     <h3
       ref={topRef}
-      className={`${className} text-textDark text-[17px] flex justify-center items-center
+      className={`${className}  text-textDark text-[15px] flex justify-center items-center
        font-medium leading-[1.4] overflow-hidden`}
     >
       {phrase.split("").map((letter, i) => {

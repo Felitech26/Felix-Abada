@@ -94,7 +94,7 @@ const Banner = () => {
  PRODUCT DESIGN | BRANDING | STRATEGY   {" "}   
           
  </motion.p>
- <div>
+ <div className="w-full">
   <div>
     <Header3 phrase={topline1} className="" />
     <Header3 phrase={topline2} className="" />
