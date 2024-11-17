@@ -26,7 +26,7 @@ module.exports = {
         titleFont: ["Inter", "sans-serif"],
       },
             colors: {
-        bodyColor: "#1b1d1d",
+        bodyColor: "#101010",
         textGreen: "#2DF9EC",
         textLight: "#ffffff",
         textDark: "#8f8f8f",
