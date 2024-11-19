@@ -6,7 +6,6 @@ import { profileImg } from "@/public/assets";
 import { RxOpenInNewWindow } from 'react-icons/rx'
 import {bev, united } from '@/public/assets'
 import { FaFacebookF } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
 
 import { TbBrandGithub } from 'react-icons/tb'
 import Header3 from "./Header3";
@@ -107,12 +106,6 @@ const Banner = () => {
   </div>
   <div className="flex flex-row mt-5 text-[#8a8a8a] 
      gap-3">
-      <a href="https://www.instagram.com/" target="blank" className="px-3 py-3 border border-sm rounded-full 
-      transition-all duration-500
-      hover:text-textGreen hover:border-textGreen
-       text-[#8a8a8a] border-[#8a8a8a]">
-      <FaInstagram className="text-[18px]" />
-      </a>
 
       <a href="https://github.com/Felitech26" target="blank" className="px-3 py-3 border border-sm rounded-full 
       transition-all duration-500
@@ -121,7 +114,7 @@ const Banner = () => {
       <TbBrandGithub className="text-[18px]" />
       </a>
      
-      <a href="" target="blank" className="px-3 py-3 border border-sm rounded-full 
+      <a href="https://web.facebook.com/felix.abada.52" target="blank" className="px-3 py-3 border border-sm rounded-full 
       transition-all duration-500
       hover:text-textGreen hover:border-textGreen
        text-[#8a8a8a] border-[#8a8a8a]">
@@ -140,7 +133,7 @@ const Banner = () => {
   <div className="w-full md:w-[410px] py-4 hover:translate-x-1 duration-300 bg-white/[0.035] border border-gray-700 
   rounded-[10px] border-opacity-10">
     <div className="flex justify-between items-center px-4">
-      <h1 className="text-[18px] font-titleFont font-bold text-white">Bev Couture</h1>
+      <h1 className="text-[15px] font-titleFont font-semibold text-white">Bev Couture</h1>
       <a className='hover:text-textGreen duration-300' 
             href="https://bev-couture.vercel.app/"
              target='_blank'>
@@ -150,7 +143,7 @@ const Banner = () => {
     <div className="px-4 pt-3"><Image className='w-full h-full object-cover'
           src={bev}
           alt='bev' /></div>
-    <div className="flex gap-4 px-4 mt-5 font-semibold text-textDark place-items-center">
+    <div className="flex gap-4 px-4 mt-5 font-medium text-[14px] text-textDark place-items-center">
       <h1>Fashion</h1>
       <h1>Ecommerce</h1>
       <h1>Full Stack</h1>
@@ -160,7 +153,7 @@ const Banner = () => {
   <div className="w-full md:w-[410px] py-4 bg-white/[0.035] border border-gray-700 
   rounded-[10px] border-opacity-10 hover:translate-x-1 duration-300">
     <div className="flex justify-between items-center px-4">
-      <h1 className="text-[18px] font-titleFont font-bold text-white">United Develpment Company</h1>
+      <h1 className="text-[15px] font-titleFont font-semibold text-white">United Develpment Company</h1>
       <a className='hover:text-textGreen duration-300' 
             href="https://united-development-company.vercel.app/"
              target='_blank'>
@@ -170,7 +163,7 @@ const Banner = () => {
     <div className="px-4 pt-4"><Image className='w-full h-full object-cover'
           src={united}
           alt='united' /></div>
-    <div className="flex gap-4 px-4 mt-5 font-semibold text-textDark place-items-center">
+    <div className="flex gap-4 px-4 mt-5 font-medium text-[14px] text-textDark place-items-center">
       <h1>Real Estate</h1>
       <h1>Portfolio</h1>
       <h1>Front End</h1>
