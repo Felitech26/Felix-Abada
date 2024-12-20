@@ -24,14 +24,14 @@ export default function Home() {
         <link rel="icon" href="/logo.icon" />
       </Head>
      
-      <main className="w-full xl:h-screen font-bodyFont bg-bodyColor relative
+      <main className="xl:h-screen font-bodyFont bg-bodyColor relative
        text-textLight scrollbar overflow-hidden
        scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
        
        <Navbar/>
        
-        <div className="w-full relative overflow-hidden pt-[8rem] pb-[5rem] md:pt-[10rem] md:pb-[10rem]
-        lg:pt-[17rem] lg:pb-[17rem] xl:pt-[10rem] xl:pb-[5rem]">
+        <div className="w-full relative overflow-hidden pt-[8rem] pb-[5rem] 
+        md:pt-[10rem] md:pb-[10rem] xl:py-[8em]">
         <Banner />
         </div> 
 
