@@ -91,7 +91,7 @@ const Banner = () => {
   return <div className="relative overflow-hidden bottom-0">
   <div className="container mx-auto relative overflow-hidden">
 <div className="w-full flex flex-col xl:flex-row overflow-hidden gap-[3rem] md:gap-[7rem]">
-<div className="flex flex-col justify-center items-center rounded-[50px] bg-[#202020] bg-opacity-30 p-5 md:p-10">
+<div className="flex flex-col justify-center items-center rounded-[50px] bg-[#2c2c2c] bg-opacity-30 p-7 md:p-10">
     <div className="mb-7">
         <Image  
         src={profileImg}
@@ -161,7 +161,7 @@ const Banner = () => {
    initial="initial"
    animate="animate"
   href="https://bev-couture.vercel.app/"
-             target='_blank' className="w-full md:w-[410px] py-4 hover:translate-x-1 duration-300 bg-[#202020] bg-opacity-30 border border-gray-700 
+             target='_blank' className="w-full md:w-[410px] py-4 hover:translate-x-1 duration-300 bg-[#2c2c2c] bg-opacity-30 border border-gray-700 
   rounded-[40px] border-opacity-10">
     <div  className="flex flex-col mdl:flex-row justify-center items-center gap-[2rem] xl:gap-[4rem]"></div>
     <div className="flex justify-between items-center px-4">
@@ -183,7 +183,7 @@ const Banner = () => {
    initial="initial"
    animate="animate"
   href="https://united-development-company.vercel.app/"
-             target='_blank' className="w-full md:w-[410px] py-4 bg-[#202020] bg-opacity-30 border border-gray-700 
+             target='_blank' className="w-full md:w-[410px] py-4 bg-[#2c2c2c] bg-opacity-30 border border-gray-700 
   rounded-[40px] border-opacity-10 hover:translate-x-1 duration-300">
     <div className="flex justify-between items-center px-4">
       <h1 className="text-[15px] font-titleFont font-semibold text-white">United Develpment Company</h1>
