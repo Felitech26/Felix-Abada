@@ -2,3 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom grid pattern background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(48, 95, 92, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 249, 236, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 249, 236, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 249, 236, 0.4);
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(45, 249, 236, 0.3);
+  color: #ffffff;
+}
+
+/* Text gradient effect */
+.text-gradient {
+  background: linear-gradient(90deg, #2DF9EC, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(16, 16, 16, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(45, 249, 236, 0.1);
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2DF9EC;
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
