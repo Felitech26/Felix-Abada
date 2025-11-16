@@ -23,8 +23,8 @@ module.exports = {
       },
 
       fontFamily:{
-        bodyFont: ["Mallory Book", "sans-serif"],
-        titleFont: ["Fkgrotesk", "sans-serif"],
+        bodyFont: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "sans-serif"],
+        titleFont: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       },
       colors: {
         // Minimalistic color scheme with dark mode support
