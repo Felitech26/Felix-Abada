@@ -12,11 +12,13 @@ export default function ThemeToggle() {
   useEffect(() => {
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system')) {
       setTheme(savedTheme);
       applyTheme(savedTheme);
     } else {
-      applyTheme('light');
+      // Default to system preference
+      setTheme('system');
+      applyTheme('system');
     }
 
     // Initial dark mode check
@@ -32,7 +34,21 @@ export default function ThemeToggle() {
       attributeFilter: ['class'],
     });
 
-    return () => observer.disconnect();
+    // Listen for system preference changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = () => {
+      const currentTheme = localStorage.getItem('theme') as Theme;
+      if (currentTheme === 'system') {
+        applyTheme('system');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+
+    return () => {
+      observer.disconnect();
+      mediaQuery.removeEventListener('change', handleSystemThemeChange);
+    };
   }, []);
 
   const applyTheme = (selectedTheme: Theme) => {
@@ -58,6 +74,7 @@ export default function ThemeToggle() {
   };
 
   const options: { value: Theme; icon: React.ReactNode; label: string }[] = [
+    { value: 'system', icon: <HiOutlineComputerDesktop className="w-4 h-4" />, label: 'System' },
     { value: 'light', icon: <IoSunnyOutline className="w-4 h-4" />, label: 'Light' },
     { value: 'dark', icon: <IoMoonOutline className="w-4 h-4" />, label: 'Dark' },
   ];

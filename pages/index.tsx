@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from "next/image";
-import { profileImg, bev, united, logo1, logo2 } from "@/public/assets";
+import { profileImg, bev, united, logo1, logo2, goparkly } from "@/public/assets";
 import { TbBrandGithub } from 'react-icons/tb';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
@@ -41,11 +41,8 @@ function ProjectCard({ href, title, description, category, image, tags, features
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <motion.a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`group block relative p-8 md:p-10 border transition-all duration-500 ${
+      <motion.div
+        className={`group relative p-8 md:p-10 border transition-all duration-500 ${
           isDarkMode
             ? 'border-white/10 hover:border-white/30 bg-white/[0.02] hover:bg-white/[0.04]'
             : 'border-black/10 hover:border-black/30 bg-black/[0.01] hover:bg-black/[0.02]'
@@ -66,9 +63,9 @@ function ProjectCard({ href, title, description, category, image, tags, features
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Left Column - Project Info */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Small Project Image */}
+            {/* Project Image */}
             <motion.div
-              className="relative w-full h-48 md:h-56 overflow-hidden border"
+              className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden border"
               style={{
                 borderColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'
               }}
@@ -112,32 +109,6 @@ function ProjectCard({ href, title, description, category, image, tags, features
               </p>
             </div>
 
-            {/* Tech Stack */}
-            <div>
-              <p className={`text-xs font-mono uppercase tracking-wider mb-3 ${
-                isDarkMode ? 'text-white/40' : 'text-black/40'
-              }`}>
-                Tech Stack
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {tags.map((tag, idx) => (
-                  <motion.span
-                    key={tag}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: idx * 0.03 }}
-                    className={`px-3 py-1.5 text-xs font-mono border ${
-                      isDarkMode
-                        ? 'border-white/20 text-white/70 hover:bg-white/5'
-                        : 'border-black/20 text-black/70 hover:bg-black/5'
-                    } transition-colors`}
-                  >
-                    {tag}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
-
             {/* Key Features */}
             <div>
               <p className={`text-xs font-mono uppercase tracking-wider mb-3 ${
@@ -168,8 +139,11 @@ function ProjectCard({ href, title, description, category, image, tags, features
             </div>
 
             {/* View Project Link */}
-            <motion.div
-              className="flex items-center gap-2 pt-2"
+            <motion.a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 pt-2"
               whileHover={{ x: 5 }}
             >
               <span className={`text-sm font-medium ${
@@ -193,7 +167,7 @@ function ProjectCard({ href, title, description, category, image, tags, features
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </motion.svg>
-            </motion.div>
+            </motion.a>
           </div>
 
           {/* Right Column - Metrics */}
@@ -227,7 +201,7 @@ function ProjectCard({ href, title, description, category, image, tags, features
             ))}
           </div>
         </div>
-      </motion.a>
+      </motion.div>
     </motion.div>
   );
 }
@@ -255,10 +229,18 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Felix Abada</title>
-        <meta name="description" content="Felix Abada - Full Stack Web Developer based in Ghana" />
+        <title>Felix Abada - Software Engineer</title>
+        <meta name="description" content="Felix Abada is a Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/assets/Images/logo2.svg" type="image/svg+xml" />
+        <link rel="canonical" href="https://www.felixabada.com" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Felix Abada | Full Stack Engineer & CTO" />
+        <meta property="og:description" content="Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.felixabada.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Felix Abada | Full Stack Engineer & CTO" />
+        <meta name="twitter:description" content="Full Stack Engineer and CTO based in Ghana, building high-performance web applications." />
       </Head>
 
       {/* Futuristic Custom Cursor */}
@@ -270,7 +252,7 @@ export default function Home() {
       <main className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-background-dark text-text-dark-primary' : 'bg-background text-text-primary'}`}>
 
         {/* Animated Banner Text */}
-        <section id='about' className="relative overflow-hidden pt-[6rem] md:pt-36 pb-12 md:pb-16">
+        <section id="hero" className="relative overflow-hidden pt-[6rem] md:pt-36 pb-12 md:pb-16">
           <div className="w-full px-3 lg:px-[8rem]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -355,97 +337,112 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="space-y-5"
               >
-                <div className="space-y-2">
-                  <p className={`text-xs uppercase tracking-wider ${
-                    isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
-                  }`}>
+                <div className="space-y-2 overflow-hidden">
+                  <motion.p
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className={`text-xs uppercase tracking-wider ${
+                      isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
+                    }`}
+                  >
                     Co-Founder & CTO at goParkly.co
-                  </p>
-                  <h1 className="text-3xl md:text-3xl lg:text-4xl font-titleFont font-bold leading-tight">
+                  </motion.p>
+                  <motion.h1
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-3xl md:text-3xl lg:text-4xl font-titleFont font-bold leading-tight"
+                  >
                     Felix Abada
-                  </h1>
+                  </motion.h1>
                 </div>
 
-                <p className={`text-base max-w-xl leading-relaxed ${
-                  isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
-                }`}>
-                A Tech Executive Based in Ghana, leading engineering innovation at goParkly.co. Passionate about building
+                <motion.p
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className={`text-base max-w-xl leading-relaxed ${
+                    isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
+                  }`}
+                >
+                  A Tech Executive Based in Ghana, leading engineering innovation at goParkly.co. Passionate about building
                   high-performing teams and products that solve real problems, bridging the gap between
                   visionary design and robust implementation.
-                </p>
-                <p className={`text-base max-w-xl leading-relaxed ${
-                  isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
-                }`}>
-                Focused on long-term impact, I translate complex challenges into elegant,
-                 user-centric solutions that deliver measurable value. 
-                 I’m committed to operational excellence, long-term value creation, 
-                 and using technology to solve meaningful problems—whether for cities, companies, or communities.
-                </p>
+                </motion.p>
+                <motion.p
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className={`text-base max-w-xl leading-relaxed ${
+                    isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
+                  }`}
+                >
+                  Focused on long-term impact, I translate complex challenges into elegant,
+                  user-centric solutions that deliver measurable value.
+                  I'm committed to operational excellence, long-term value creation,
+                  and using technology to solve meaningful problems—whether for cities, companies, or communities.
+                </motion.p>
 
                 {/* Social Media Icons */}
-                <div className="flex items-center gap-4">
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="flex items-center gap-4"
+                >
                   <p className={`text-sm ${
                     isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
                   }`}>
                     See what I've been doing on
                   </p>
                   <div className="flex items-center gap-3">
-                    <a
-                      href="https://github.com/Felitech26"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`transition-colors ${
-                        isDarkMode
-                          ? 'text-text-dark-tertiary hover:text-text-dark-primary'
-                          : 'text-text-tertiary hover:text-text-primary'
-                      }`}
-                    >
-                      <TbBrandGithub className="text-xl" />
-                    </a>
-                    <a
-                      href="https://gh.linkedin.com/in/felix-abada-11707a1aa"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`transition-colors ${
-                        isDarkMode
-                          ? 'text-text-dark-tertiary hover:text-text-dark-primary'
-                          : 'text-text-tertiary hover:text-text-primary'
-                      }`}
-                    >
-                      <FaLinkedinIn className="text-lg" />
-                    </a>
-                    <a
-                      href="https://www.facebook.com/felix.abada.52/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`transition-colors ${
-                        isDarkMode
-                          ? 'text-text-dark-tertiary hover:text-text-dark-primary'
-                          : 'text-text-tertiary hover:text-text-primary'
-                      }`}
-                    >
-                      <FaFacebookF className="text-lg" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/nii.devs/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`transition-colors ${
-                        isDarkMode
-                          ? 'text-text-dark-tertiary hover:text-text-dark-primary'
-                          : 'text-text-tertiary hover:text-text-primary'
-                      }`}
-                    >
-                      <FaInstagram className="text-lg" />
-                    </a>
+                    {[
+                      { icon: TbBrandGithub, href: 'https://github.com/Felitech26', size: 'text-xl' },
+                      { icon: FaLinkedinIn, href: 'https://gh.linkedin.com/in/felix-abada-11707a1aa', size: 'text-lg' },
+                      { icon: FaFacebookF, href: 'https://www.facebook.com/felix.abada.52/', size: 'text-lg' },
+                      { icon: FaInstagram, href: 'https://www.instagram.com/nii.devs/', size: 'text-lg' },
+                    ].map((social, idx) => (
+                      <motion.a
+                        key={social.href}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.6 + idx * 0.1 }}
+                        whileHover={{ scale: 1.2, y: -2 }}
+                        className={`transition-colors ${
+                          isDarkMode
+                            ? 'text-text-dark-tertiary hover:text-text-dark-primary'
+                            : 'text-text-tertiary hover:text-text-primary'
+                        }`}
+                      >
+                        <social.icon className={social.size} />
+                      </motion.a>
+                    ))}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Let's Talk Button */}
-                <div>
-                  <a
-                    href="//wa.me/233508591078"
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  <motion.a
+                    href="https://wa.me/233508591078"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className={`inline-flex items-center gap-2 px-6 py-3 font-medium text-sm rounded transition-colors ${
                       isDarkMode
                         ? 'bg-text-dark-primary text-background-dark hover:bg-text-dark-secondary'
@@ -454,15 +451,16 @@ export default function Home() {
                   >
                     Let's talk
                     <IoLogoWhatsapp className="text-lg" />
-                  </a>
-                </div>
+                  </motion.a>
+                </motion.div>
               </motion.div>
 
               {/* Futuristic Image Design */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 className="relative order-first lg:order-last flex items-center justify-center"
               >
                 <div className="relative group w-full max-w-sm">
@@ -630,57 +628,121 @@ export default function Home() {
               </h2>
             </motion.div>
 
-            {/* Projects Grid */}
-            <div className="space-y-16 md:space-y-20">
-              {/* Project 1 - Bev Couture */}
+            {/* Featured Project - goParkly */}
+            <div className="mb-16 md:mb-20">
               <ProjectCard
-                href="https://bev-couture.vercel.app/"
-                title="Bev Couture"
-                description="A premium fashion e-commerce platform featuring seamless shopping experience, elegant design, and modern web technologies for optimal performance."
-                category="E-COMMERCE"
-                image={bev}
-                tags={['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Redux']}
+                href="https://www.goparkly.co/"
+                title="goParkly"
+                description="A smart parking platform revolutionizing urban mobility worldwide. As CTO & Co-Founder, I lead the engineering team building scalable solutions that connect drivers with available parking spaces in real-time, reducing congestion and optimizing city infrastructure."
+                category="SMART MOBILITY"
+                image={goparkly}
+                tags={['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS']}
                 features={[
-                  'Secure Payment Processing with Stripe',
-                  'Real-time Inventory Management',
-                  'Advanced Product Filtering & Search',
-                  'Order Tracking & Management',
-                  'Responsive Mobile-First Design',
-                  'Admin Dashboard & Analytics'
+                  'Real-time Parking Availability',
+                  'Mobile Payment Integration',
+                  'Felix AI Parking Assistant',
+                  'Admin Dashboard & Analytics',
+                  'Multi-tenant Architecture',
+                  'Scalable Cloud Infrastructure'
                 ]}
                 metrics={[
-                  { label: 'Page Load Time', value: '<1.8s' },
-                  { label: 'Conversion Rate', value: '+42%' },
-                  { label: 'Mobile Traffic', value: '67%' }
+                  { label: 'Active Users', value: '10K+' },
+                  { label: 'Parking Sessions', value: '50K+' },
+                  { label: 'Cities Served', value: '3+' }
                 ]}
                 isDarkMode={isDarkMode}
                 index={0}
               />
+            </div>
 
-              {/* Project 2 - United Development */}
-              <ProjectCard
-                href="https://united-development-company.vercel.app/"
-                title="United Development Company"
-                description="Professional real estate portfolio showcasing premier properties and development projects with stunning visuals and intuitive navigation."
-                category="REAL ESTATE"
-                image={united}
-                tags={['React', 'Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript']}
-                features={[
-                  'Interactive Property Gallery',
-                  'Advanced Property Search & Filters',
-                  'Integrated Contact Forms',
-                  'Dynamic Property Listings',
-                  'Smooth Scroll Animations',
-                  'SEO Optimized Architecture'
-                ]}
-                metrics={[
-                  { label: 'User Engagement', value: '+55%' },
-                  { label: 'Bounce Rate', value: '-32%' },
-                  { label: 'Inquiry Rate', value: '+28%' }
-                ]}
-                isDarkMode={isDarkMode}
-                index={1}
-              />
+            {/* Other Projects - Simple List */}
+            <div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className={`text-xs font-mono uppercase tracking-[0.2em] mb-6 ${
+                  isDarkMode ? 'text-white/40' : 'text-black/40'
+                }`}
+              >
+                Other Projects
+              </motion.p>
+              <div className="space-y-4">
+                {[
+                  {
+                    title: 'Bev Couture',
+                    description: 'Premium fashion e-commerce platform with seamless shopping experience',
+                    category: 'E-Commerce',
+                    href: 'https://bev-couture.vercel.app/',
+                    features: ['Secure Stripe Payments', 'Real-time Inventory', 'Mobile-First Design', 'Admin Dashboard']
+                  },
+                  {
+                    title: 'United Development Company',
+                    description: 'Corporate website for a leading real estate development firm in Ghana',
+                    category: 'Corporate',
+                    href: 'https://united-development-company.vercel.app/',
+                    features: ['Company Profile', 'Project Portfolio', 'Team Section', 'Inquiry Form']
+                  }
+                ].map((project, idx) => (
+                  <motion.a
+                    key={project.title}
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className={`group block p-6 border transition-all duration-300 ${
+                      isDarkMode
+                        ? 'border-white/10 hover:border-white/30 bg-white/[0.02] hover:bg-white/[0.04]'
+                        : 'border-black/10 hover:border-black/30 bg-black/[0.01] hover:bg-black/[0.02]'
+                    }`}
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <span className={`text-xs font-mono uppercase tracking-wider ${
+                          isDarkMode ? 'text-white/40' : 'text-black/40'
+                        }`}>
+                          {project.category}
+                        </span>
+                        <h3 className={`text-lg md:text-xl font-bold ${
+                          isDarkMode ? 'text-white' : 'text-black'
+                        }`}>
+                          {project.title}
+                        </h3>
+                      </div>
+                      <motion.div
+                        className={`${isDarkMode ? 'text-white/40' : 'text-black/40'}`}
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <HiOutlineArrowNarrowRight className="text-2xl" />
+                      </motion.div>
+                    </div>
+                    <p className={`text-sm mb-3 ${
+                      isDarkMode ? 'text-white/60' : 'text-black/60'
+                    }`}>
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.features.map((feature) => (
+                        <span
+                          key={feature}
+                          className={`text-xs px-2 py-1 rounded ${
+                            isDarkMode
+                              ? 'bg-white/5 text-white/50'
+                              : 'bg-black/5 text-black/50'
+                          }`}
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -689,16 +751,92 @@ export default function Home() {
         <section id="contact" className={`relative py-12 md:py-16 overflow-hidden ${
           isDarkMode ? 'bg-background-dark' : 'bg-background'
         }`}>
-          {/* Animated Background Grid */}
-          <div
-            className="absolute inset-0 opacity-[0.02]"
-            style={{
-              backgroundImage: isDarkMode
-                ? 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)'
-                : 'linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px)',
-              backgroundSize: '40px 40px'
-            }}
-          />
+          {/* Minimalist Futuristic Background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Subtle gradient overlay */}
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                background: isDarkMode
+                  ? 'radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 50%)'
+                  : 'radial-gradient(ellipse at 80% 50%, rgba(0,0,0,0.02) 0%, transparent 50%)'
+              }}
+            />
+
+            {/* Single animated horizontal line - left */}
+            <motion.div
+              className={`absolute top-1/2 left-0 h-[1px] w-24 ${
+                isDarkMode ? 'bg-gradient-to-r from-transparent via-white/30 to-transparent' : 'bg-gradient-to-r from-transparent via-black/20 to-transparent'
+              }`}
+              animate={{
+                x: [0, 60, 0],
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Single animated horizontal line - right */}
+            <motion.div
+              className={`absolute top-1/3 right-0 h-[1px] w-32 ${
+                isDarkMode ? 'bg-gradient-to-l from-transparent via-white/20 to-transparent' : 'bg-gradient-to-l from-transparent via-black/15 to-transparent'
+              }`}
+              animate={{
+                x: [0, -40, 0],
+                opacity: [0.15, 0.4, 0.15],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Minimal corner brackets */}
+            <div className={`absolute top-8 left-8 w-12 h-12`}>
+              <div className={`absolute top-0 left-0 w-6 h-[1px] ${isDarkMode ? 'bg-white/10' : 'bg-black/10'}`} />
+              <div className={`absolute top-0 left-0 h-6 w-[1px] ${isDarkMode ? 'bg-white/10' : 'bg-black/10'}`} />
+            </div>
+            <div className={`absolute bottom-8 right-8 w-12 h-12`}>
+              <div className={`absolute bottom-0 right-0 w-6 h-[1px] ${isDarkMode ? 'bg-white/10' : 'bg-black/10'}`} />
+              <div className={`absolute bottom-0 right-0 h-6 w-[1px] ${isDarkMode ? 'bg-white/10' : 'bg-black/10'}`} />
+            </div>
+
+            {/* Single pulsing dot - right side */}
+            <motion.div
+              className={`absolute top-1/4 right-[15%] w-1 h-1 rounded-full ${
+                isDarkMode ? 'bg-white/40' : 'bg-black/30'
+              }`}
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.4, 0.8, 0.4],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Single pulsing dot - left side */}
+            <motion.div
+              className={`absolute bottom-1/3 left-[10%] w-1 h-1 rounded-full ${
+                isDarkMode ? 'bg-white/30' : 'bg-black/20'
+              }`}
+              animate={{
+                scale: [1, 1.8, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
 
           <div className="relative w-full px-3 lg:px-[8rem]">
             {/* Section Header */}
@@ -829,7 +967,7 @@ export default function Home() {
                   <p className={`text-base ${
                     isDarkMode ? 'text-white/70' : 'text-black/70'
                   }`}>
-                    Usually within 24 hours
+                    Usually within 4 hours
                   </p>
                 </div>
               </motion.div>

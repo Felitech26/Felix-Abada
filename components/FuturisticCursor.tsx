@@ -14,9 +14,9 @@ export default function FuturisticCursor({ isDarkMode }: FuturisticCursorProps) 
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  // Different spring configs for smoother animations
-  const springConfig = { damping: 30, stiffness: 500 };
-  const springConfigSlow = { damping: 20, stiffness: 200 };
+  // Different spring configs - faster and more responsive
+  const springConfig = { damping: 50, stiffness: 800 };
+  const springConfigSlow = { damping: 35, stiffness: 400 };
 
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
