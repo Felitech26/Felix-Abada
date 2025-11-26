@@ -234,13 +234,77 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.felixabada.com" />
         <meta name="robots" content="index, follow" />
+
+        {/* Open Graph / Facebook */}
         <meta property="og:title" content="Felix Abada | Full Stack Engineer & CTO" />
         <meta property="og:description" content="Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript." />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://www.felixabada.com" />
+        <meta property="og:image" content="https://www.felixabada.com/assets/Images/profile.png" />
+        <meta property="og:site_name" content="Felix Abada Portfolio" />
+        <meta property="profile:first_name" content="Felix" />
+        <meta property="profile:last_name" content="Abada" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Felix Abada | Full Stack Engineer & CTO" />
         <meta name="twitter:description" content="Full Stack Engineer and CTO based in Ghana, building high-performance web applications." />
+        <meta name="twitter:image" content="https://www.felixabada.com/assets/Images/profile.png" />
+
+        {/* Additional SEO */}
+        <meta name="author" content="Felix Abada" />
+        <meta name="keywords" content="Felix Abada, Software Engineer, Full Stack Developer, CTO, goParkly, Ghana, React, Next.js, TypeScript, Web Development" />
+
+        {/* Structured Data - Person Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Felix Abada",
+              "url": "https://www.felixabada.com",
+              "image": "https://www.felixabada.com/assets/Images/profile.png",
+              "jobTitle": "Full Stack Engineer & CTO",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "goParkly"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Accra",
+                "addressCountry": "Ghana"
+              },
+              "email": "felitech26@outlook.com",
+              "sameAs": [
+                "https://github.com/Felitech26",
+                "https://gh.linkedin.com/in/felix-abada-11707a1aa",
+                "https://www.facebook.com/felix.abada.52/",
+                "https://www.instagram.com/nii.devs/"
+              ],
+              "description": "Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript.",
+              "knowsAbout": ["Software Engineering", "Full Stack Development", "React", "Next.js", "TypeScript", "Web Development", "Smart Mobility"]
+            })
+          }}
+        />
+
+        {/* Structured Data - Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Felix Abada Portfolio",
+              "url": "https://www.felixabada.com",
+              "description": "Portfolio website of Felix Abada, Full Stack Engineer and CTO at goParkly",
+              "author": {
+                "@type": "Person",
+                "name": "Felix Abada"
+              }
+            })
+          }}
+        />
       </Head>
 
       {/* Futuristic Custom Cursor */}
