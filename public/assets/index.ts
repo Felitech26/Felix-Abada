@@ -1,4 +1,4 @@
-import logo from "./Images/logo.png";
+
 import logo1 from "./Images/logo1.svg";
 import logo2 from "./Images/logo2.svg";
 import profileImg from "./Images/profile.jpg";
@@ -11,4 +11,4 @@ import goparkly from "./Images/goparkly.png";
 import bevcouture from "./Images/bevcouture.png";
 
 
-export { logo,logo1,logo2,goparkly, profileImg, amazonImg, ageImg, online, bev, united, bevcouture };
+export {logo1,logo2,goparkly, profileImg, amazonImg, ageImg, online, bev, united, bevcouture };

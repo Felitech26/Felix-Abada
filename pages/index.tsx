@@ -230,14 +230,14 @@ export default function Home() {
     <>
       <Head>
         <title>Felix Abada - Software Engineer</title>
-        <meta name="description" content="Felix Abada is a Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript." />
+        <meta name="description" content="A Tech Executive Based in Ghana, leading engineering innovation at goParkly.co. Passionate about building high-performing teams and products that solve real problems." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.felixabada.com" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:title" content="Felix Abada | Full Stack Engineer & CTO" />
-        <meta property="og:description" content="Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript." />
+        <meta property="og:description" content="A Tech Executive Based in Ghana, leading engineering innovation at goParkly.co. Passionate about building high-performing teams and products that solve real problems." />
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://www.felixabada.com" />
         <meta property="og:image" content="https://www.felixabada.com/assets/Images/profile.png" />
@@ -248,12 +248,12 @@ export default function Home() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Felix Abada | Full Stack Engineer & CTO" />
-        <meta name="twitter:description" content="Full Stack Engineer and CTO based in Ghana, building high-performance web applications." />
+        <meta name="twitter:description" content="A Tech Executive Based in Ghana, leading engineering innovation at goParkly.co." />
         <meta name="twitter:image" content="https://www.felixabada.com/assets/Images/profile.png" />
 
         {/* Additional SEO */}
         <meta name="author" content="Felix Abada" />
-        <meta name="keywords" content="Felix Abada, Software Engineer, Full Stack Developer, CTO, goParkly, Ghana, React, Next.js, TypeScript, Web Development" />
+        <meta name="keywords" content="Felix Abada, Software Engineer, Full Stack Developer, CTO, goParkly, Ghana, Web Development" />
 
         {/* Structured Data - Person Schema */}
         <script
@@ -282,8 +282,8 @@ export default function Home() {
                 "https://www.facebook.com/felix.abada.52/",
                 "https://www.instagram.com/nii.devs/"
               ],
-              "description": "Full Stack Engineer and CTO based in Ghana, specializing in building high-performance web applications with React, Next.js, and TypeScript.",
-              "knowsAbout": ["Software Engineering", "Full Stack Development", "React", "Next.js", "TypeScript", "Web Development", "Smart Mobility"]
+              "description": "Tech Executive Based in Ghana, leading engineering innovation at goParkly.co. Passionate about building high-performing teams and products that solve real problems.",
+              "knowsAbout": ["Software Engineering", "Full Stack Development", "Web Development", "Smart Mobility", "Engineering Leadership"]
             })
           }}
         />
@@ -1186,7 +1186,7 @@ export default function Home() {
                 <p className={`text-sm text-center sm:text-left ${
                   isDarkMode ? 'text-text-dark-secondary' : 'text-text-secondary'
                 }`}>
-                  © {new Date().getFullYear()} Felix Abada. All rights reserved.
+                  © {new Date().getFullYear()} Felix Abada
                 </p>
               </div>
 
