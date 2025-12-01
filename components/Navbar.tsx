@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
+import Link from "next/link";
 import { logo1, logo2 } from "@/public/assets";
 import { TbBrandGithub } from 'react-icons/tb';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
@@ -22,7 +23,7 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
       }`}>
         <div className="w-full px-3 lg:px-[8rem]">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="/" className="cursor-pointer" aria-label="Navigate to home">
+            <Link href="/" className="cursor-pointer" aria-label="Navigate to home">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -39,7 +40,7 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
                   priority
                 />
               </motion.div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2">
