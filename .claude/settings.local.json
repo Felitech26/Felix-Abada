@@ -13,7 +13,8 @@
       "Bash(node -e:*)",
       "Bash(git checkout:*)",
       "Bash(node generate-favicons.js:*)",
-      "Bash(node generate-social-images.js:*)"
+      "Bash(node generate-social-images.js:*)",
+      "Bash(node generate-ico.js:*)"
     ],
     "deny": [],
     "ask": []
