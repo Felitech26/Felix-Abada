@@ -22,19 +22,24 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
       }`}>
         <div className="w-full px-3 lg:px-[8rem]">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="relative w-7 h-7 md:w-7 md:h-7"
-            >
-              <Image
-                src={isDarkMode ? logo1 : logo2}
-                alt="Felix Abada Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
+            <a href="/" className="cursor-pointer" aria-label="Navigate to home">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="relative w-7 h-7 md:w-7 md:h-7"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image
+                  src={isDarkMode ? logo1 : logo2}
+                  alt="Felix Abada Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2">

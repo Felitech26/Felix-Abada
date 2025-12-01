@@ -11,7 +11,9 @@
       "Bash(convert:*)",
       "Bash(where:*)",
       "Bash(node -e:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(node generate-favicons.js:*)",
+      "Bash(node generate-social-images.js:*)"
     ],
     "deny": [],
     "ask": []
