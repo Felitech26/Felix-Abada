@@ -264,11 +264,16 @@ export default function Home() {
               "@type": "Person",
               "name": "Felix Abada",
               "url": "https://www.felixabada.com",
-              "image": "https://www.felixabada.com/assets/Images/profile.png",
+              "image": [
+                "https://www.felixabada.com/android-chrome-512x512.png",
+                "https://www.felixabada.com/assets/Images/profile.png"
+              ],
+              "logo": "https://www.felixabada.com/android-chrome-512x512.png",
               "jobTitle": "Full Stack Engineer & CTO",
               "worksFor": {
                 "@type": "Organization",
-                "name": "goParkly"
+                "name": "goParkly",
+                "url": "https://www.goparkly.co"
               },
               "address": {
                 "@type": "PostalAddress",

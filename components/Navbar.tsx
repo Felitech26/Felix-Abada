@@ -6,6 +6,7 @@ import { logo1, logo2 } from "@/public/assets";
 import { TbBrandGithub } from 'react-icons/tb';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import ThemeToggle from './ThemeToggle';
+import UserInfo from './UserInfo';
 
 interface NavbarProps {
   isDarkMode: boolean;
@@ -43,7 +44,13 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2">
+              <UserInfo isDarkMode={isDarkMode} />
+
+              <div className={`w-px h-6 mx-2 ${
+                isDarkMode ? 'bg-border-dark-mode' : 'bg-border'
+              }`} />
+
               {['Work', 'About', 'Contact'].map((item) => (
                 <a
                   key={item}
@@ -373,6 +380,11 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
                           ease: 'linear'
                         }}
                       />
+                    </div>
+
+                    {/* User Info Section */}
+                    <div className="mb-6">
+                      <UserInfo isDarkMode={isDarkMode} />
                     </div>
 
                     <div className="flex items-center gap-2 mb-4">
