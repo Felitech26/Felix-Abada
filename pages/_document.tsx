@@ -10,14 +10,17 @@ export default function Document() {
         <meta name="author" content="Felix Abada" />
 
         {/* Favicon - Multiple sizes for better browser and search engine support */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        {/* Safari Pinned Tab */}
+        <link rel="mask-icon" href="/favicon.svg" color="#000000" />
 
         {/* Apple Touch Icons */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -72,8 +75,14 @@ export default function Document() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Felix Abada",
+              "alternateName": "Felix Abada Portfolio",
               "url": "https://www.felixabada.com",
-              "logo": "https://www.felixabada.com/android-chrome-512x512.png",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.felixabada.com/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
+              },
               "image": "https://www.felixabada.com/og-image.png",
               "sameAs": [
                 "https://github.com/Felitech26",
