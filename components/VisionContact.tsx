@@ -6,64 +6,77 @@ interface Props {
 
 export default function VisionContact({ isDarkMode }: Props) {
     return (
-        <section className="py-32 px-6 lg:px-32 relative overflow-hidden">
+        <section className="py-24 md:py-32 px-6 lg:px-24 relative overflow-hidden">
 
             {/* Background Texture - subtle dots */}
             <div className="absolute inset-0 z-0 opacity-[0.05]"
                 style={{ backgroundImage: `radial-gradient(${isDarkMode ? '#fff' : '#000'} 1px, transparent 1px)`, backgroundSize: '40px 40px' }}
             />
 
-            <div className="relative z-10 max-w-5xl mx-auto text-center">
+            <div className="relative z-10 max-w-7xl mx-auto">
 
                 {/* Leadership Philosophy */}
-                <div className="mb-32">
+                <div className="mb-32 max-w-3xl">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block mb-6 px-4 py-1 border border-current rounded-full"
+                        className="inline-block mb-5"
                     >
-                        <span className="font-mono text-[10px] uppercase tracking-widest">Leadership Philosophy</span>
+                        <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-60">Leadership Philosophy</span>
                     </motion.div>
                     <motion.h3
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl font-titleFont leading-relaxed italic opacity-80"
+                        className="text-2xl md:text-4xl font-light leading-relaxed opacity-90"
                     >
-                        &ldquo;Platforms are built not just with code, but with culture—where collaboration, trust, and long-term thinking drive sustainable innovation.&rdquo;
+                        <span className="font-titleFont italic">&ldquo;Platforms are built not just with code, but with culture—</span>
+                        <span className="opacity-60">where collaboration, trust, and long-term thinking drive sustainable innovation.&rdquo;</span>
                     </motion.h3>
                 </div>
 
 
-                {/* Vision Statement - The "Musk" moment */}
-                <div className="mb-40">
-                    <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-bold leading-tight mb-8">
-                        To lead the creation of <span className="opacity-40">transformative</span> technology platforms that empower people.
-                    </h2>
-                    <p className="text-lg opacity-60 max-w-2xl mx-auto">
-                        Connecting Africa to global opportunity through engineering excellence, strategic clarity, and human-centered design.
-                    </p>
+                {/* Vision Statement - Split Layout */}
+                <div className="mb-40 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-end border-t border-current border-opacity-10 pt-16">
+                    <div>
+                        <h2 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8 md:mb-0">
+                            To lead the creation of <span className="font-titleFont italic opacity-50">transformative</span> technology platforms.
+                        </h2>
+                    </div>
+                    <div>
+                        <p className="text-xl font-light opacity-60 leading-relaxed max-w-md ml-auto">
+                            Connecting Africa to global opportunity through engineering excellence, strategic clarity, and human-centered design.
+                        </p>
+                    </div>
                 </div>
 
-                {/* Executive Call to Action */}
-                <div className={`p-12 md:p-20 border border-current border-opacity-10 bg-opacity-[0.02] ${isDarkMode ? 'bg-white' : 'bg-black'}`}>
-                    <h2 className="text-4xl md:text-6xl font-bold font-titleFont mb-8">Let&apos;s Build the Future</h2>
-                    <p className="text-xl max-w-2xl mx-auto mb-12 opacity-70">
-                        Open to collaboration, investment, and partnerships. Whether you&apos;re an investor, founder, or ecosystem builder, let&apos;s explore how technology can create lasting impact.
-                    </p>
+                {/* Executive Call to Action - Split Layout */}
+                <div className="border-t border-current border-opacity-10 pt-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                        <div>
+                            <h2 className="text-4xl md:text-6xl font-light font-titleFont mb-6">Let&apos;s Build<br />the Future</h2>
+                        </div>
 
-                    <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <a href="mailto:felitech26@outlook.com" className={`px-10 py-4 font-mono text-sm uppercase tracking-widest border border-current transition-all
-                  ${isDarkMode
-                                ? 'hover:bg-white hover:text-black'
-                                : 'hover:bg-black hover:text-white'}
-               `}>
-                            Contact Executive Office
-                        </a>
-                        <a href="https://gh.linkedin.com/in/felix-abada-11707a1aa" className="font-mono text-sm uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity flex items-center gap-2">
-                            <span>LinkedIn Profile</span>
-                        </a>
+                        <div className="flex flex-col justify-between h-full">
+                            <p className="text-lg font-light opacity-60 leading-relaxed mb-12 max-w-lg">
+                                Open to collaboration, investment, and partnerships. Whether you&apos;re an investor, founder, or ecosystem builder, let&apos;s explore how technology can create lasting impact.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center">
+                                <a href="mailto:felitech26@outlook.com" className={`group relative px-8 py-3 font-mono text-xs uppercase tracking-widest border border-current transition-all
+                                    ${isDarkMode
+                                        ? 'hover:bg-white hover:text-black'
+                                        : 'hover:bg-black hover:text-white'}
+                                `}>
+                                    <span className="relative z-10">Contact Executive Office</span>
+                                </a>
+                                <a href="https://gh.linkedin.com/in/felix-abada-11707a1aa" className="font-mono text-xs uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-3">
+                                    <span>LinkedIn Profile</span>
+                                    <span className="text-lg">↗</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { profileImg } from '@/public/assets';
 
@@ -7,6 +7,30 @@ interface Props {
 }
 
 export default function HeroEditorial({ isDarkMode }: Props) {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    // 3D Rotation transforms
+    const rotateX = useTransform(y, [-100, 100], [10, -10]); // Reduced rotation for elegance
+    const rotateY = useTransform(x, [-100, 100], [-10, 10]);
+
+    // Gloss/Sheen effect movement
+    const sheenX = useTransform(x, [-100, 100], [-20, 20]);
+    const sheenY = useTransform(y, [-100, 100], [-20, 20]);
+
+    function handleMouseMove(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // Calculate distance from center
+        const mouseX = event.clientX - centerX;
+        const mouseY = event.clientY - centerY;
+
+        x.set(mouseX);
+        y.set(mouseY);
+    }
+
     return (
         <section className="min-h-screen flex items-center justify-center pt-32 pb-10 px-6 lg:px-32 bg-transparent relative overflow-hidden">
 
@@ -116,122 +140,48 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                     </motion.a>
                 </div>
 
-                {/* Futuristic Image Design */}
+                {/* Futuristic 3D Hover/Tilt Design */}
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                    className="lg:col-span-5 order-1 lg:order-2 relative flex items-center justify-center"
+                    className="lg:col-span-5 order-1 lg:order-2 flex items-center justify-center perspective-[2000px]"
                 >
-                    <div className="relative group w-full max-w-sm">
-                        {/* Static border with pulsing glow */}
-                        <motion.div
-                            className="absolute inset-0 rounded-lg border border-gray-100"
-                            style={{
-                                borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.15)' : 'rgba(200, 200, 200, 0.3)'
-                            }}
-                            animate={{
+                    <motion.div
+                        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={() => { x.set(0); y.set(0); }}
+                        className="relative group w-full max-w-md aspect-[3/4] cursor-none"
+                    >
 
-                            }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        />
 
-                        {/* Corner brackets with expand animation */}
-                        <div className="absolute -top-3 -left-3 w-16 h-16">
-                            <motion.div
-                                className="absolute top-0 left-0 border-t-2 border-l-2"
-                                style={{
-                                    borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 200, 200, 0.5)'
-                                }}
-                                animate={{
-                                    width: ['40%', '60%', '40%'],
-                                    height: ['40%', '60%', '40%']
-                                }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            />
-                        </div>
-                        <div className="absolute -top-3 -right-3 w-16 h-16">
-                            <motion.div
-                                className="absolute top-0 right-0 border-t-2 border-r-2"
-                                style={{
-                                    borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 200, 200, 0.5)'
-                                }}
-                                animate={{
-                                    width: ['40%', '60%', '40%'],
-                                    height: ['40%', '60%', '40%']
-                                }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                            />
-                        </div>
-                        <div className="absolute -bottom-3 -left-3 w-16 h-16">
-                            <motion.div
-                                className="absolute bottom-0 left-0 border-b-2 border-l-2"
-                                style={{
-                                    borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 200, 200, 0.5)'
-                                }}
-                                animate={{
-                                    width: ['40%', '60%', '40%'],
-                                    height: ['40%', '60%', '40%']
-                                }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            />
-                        </div>
-                        <div className="absolute -bottom-3 -right-3 w-16 h-16">
-                            <motion.div
-                                className="absolute bottom-0 right-0 border-b-2 border-r-2"
-                                style={{
-                                    borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 200, 200, 0.5)'
-                                }}
-                                animate={{
-                                    width: ['40%', '60%', '40%'],
-                                    height: ['40%', '60%', '40%']
-                                }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                            />
+
+                        {/* Corner Brackets (Floating) */}
+                        <div className="absolute inset-0 pointer-events-none z-30" style={{ transform: "translateZ(30px)" }}>
+                            <div className="absolute -top-4 -left-4 w-16 h-16 border-t border-l border-current opacity-60" />
+                            <div className="absolute -top-4 -right-4 w-16 h-16 border-t border-r border-current opacity-60" />
+                            <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b border-l border-current opacity-60" />
+                            <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b border-r border-current opacity-60" />
                         </div>
 
-                        {/* Main image */}
-                        <div className="relative aspect-square p-2">
-                            <div className="relative w-full h-full rounded-lg overflow-hidden">
-                                <Image
-                                    src={profileImg}
-                                    alt="Felix Abada"
-                                    fill
-                                    className="object-contain"
-                                    priority
-                                    quality={100}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                                />
-                            </div>
+                        {/* Image Container with depth */}
+                        <div className="relative w-full h-full overflow-hidden shadow-2xl bg-black/5" style={{ transform: "translateZ(0px)" }}>
+                            <Image
+                                src={profileImg}
+                                alt="Felix Abada"
+                                fill
+                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                priority
+                                quality={100}
+                                sizes="(max-width: 738px) 100vw, (max-width: 1024px) 50vw, 600px"
+                            />
+
+                            {/* Subtle tint overlay on hover */}
+                            <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none opacity-0 group-hover:opacity-20 ${isDarkMode ? 'bg-blue-500' : 'bg-black'}`} />
                         </div>
 
-                        {/* Corner dots indicators */}
-                        <motion.div
-                            className={`absolute top-2 left-2 w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-text-dark-primary' : 'bg-text-primary'
-                                }`}
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                        />
-                        <motion.div
-                            className={`absolute top-2 right-2 w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-text-dark-primary' : 'bg-text-primary'
-                                }`}
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
-                        />
-                        <motion.div
-                            className={`absolute bottom-2 left-2 w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-text-dark-primary' : 'bg-text-primary'
-                                }`}
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
-                        />
-                        <motion.div
-                            className={`absolute bottom-2 right-2 w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-text-dark-primary' : 'bg-text-primary'
-                                }`}
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.5, repeat: Infinity, delay: 0.9 }}
-                        />
-                    </div>
+                    </motion.div>
                 </motion.div>
 
             </div>
