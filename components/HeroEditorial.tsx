@@ -32,7 +32,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
     }
 
     return (
-        <section className="min-h-screen flex items-center justify-center pt-32 pb-10 px-6 lg:px-32 bg-transparent relative overflow-hidden">
+        <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 px-6 lg:px-32 bg-transparent relative overflow-hidden flex items-center justify-center">
 
             <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -46,7 +46,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         className="flex items-center gap-3"
                     >
                         <div className={`h-px w-8 ${isDarkMode ? 'bg-white/60' : 'bg-black/60'}`} />
-                        <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">Tech Executive | CTO at <a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
+                        <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">Tech Executive |Co-Founder & CTO at <a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
                     </motion.div>
 
                     <motion.h1
@@ -152,9 +152,8 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={() => { x.set(0); y.set(0); }}
-                        className="relative group w-full max-w-md aspect-[3/4] cursor-none"
+                        className="relative group w-full max-w-sm aspect-[2/3] cursor-none"
                     >
-
 
 
                         {/* Corner Brackets (Floating) */}
@@ -171,7 +170,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                                 src={profileImg}
                                 alt="Felix Abada"
                                 fill
-                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                className="object-contain transition-transform duration-700 ease-out group-hover:scale-105"
                                 priority
                                 quality={100}
                                 sizes="(max-width: 738px) 100vw, (max-width: 1024px) 50vw, 600px"

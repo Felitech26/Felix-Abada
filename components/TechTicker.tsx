@@ -21,7 +21,13 @@ export default function TechTicker({ isDarkMode }: Props) {
 
     return (
         <section className={`py-12 border-y ${isDarkMode ? 'border-white/5 bg-white/[0.02]' : 'border-black/5 bg-black/[0.02]'}`}>
-            <div className="px-6 lg:px-32">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="px-6 lg:px-32"
+            >
                 <div className="flex gap-12 overflow-hidden py-4 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                     <motion.div
                         className="flex gap-12 whitespace-nowrap"
@@ -36,7 +42,7 @@ export default function TechTicker({ isDarkMode }: Props) {
                         ))}
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }
