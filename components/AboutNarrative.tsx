@@ -15,7 +15,7 @@ export default function AboutNarrative({ isDarkMode }: Props) {
                     viewport={{ once: true }}
                     className="text-2xl md:text-3xl font-light leading-relaxed"
                 >
-                    <span className="font-titleFont font-bold italic opacity-40 pr-4">"</span>
+                    <span className="font-titleFont font-bold italic opacity-40 pr-4">&ldquo;</span>
                     My mission is simple: To build resilient systems that empower people, businesses and simplify lives through engineering excellence.
                 </motion.p>
 
@@ -30,7 +30,7 @@ export default function AboutNarrative({ isDarkMode }: Props) {
                             Rooted in Africa but operating with a global perspective, I focus on diagnosing complex systemic issues and architecting solutions that drive long-term value. Technology, to me, is not just about lines of code—it’s about creating ecosystems where innovation can thrive.
                         </p>
                         <p>
-                            In my role as Co-Founder and CTO, I've learned that engineering excellence goes beyond technical mastery—it's about empowering teams, fostering collaboration, and staying committed to delivering meaningful solutions with precision.
+                            In my role as Co-Founder and CTO, I&apos;ve learned that engineering excellence goes beyond technical mastery—it&apos;s about empowering teams, fostering collaboration, and staying committed to delivering meaningful solutions with precision.
                         </p>
                     </motion.div>
 
