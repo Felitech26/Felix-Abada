@@ -2,8 +2,8 @@
 module.exports = {
   darkMode: 'class',
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}",
-  "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-  "./components/**/*.{js,ts,jsx,tsx,mdx}",],
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",],
   theme: {
     container: {
       padding: '15px',
@@ -22,9 +22,9 @@ module.exports = {
         xl: "1280px",
       },
 
-      fontFamily:{
-        bodyFont: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "sans-serif"],
-        titleFont: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+      fontFamily: {
+        body: ["Lato", "sans-serif"],
+        titleFont: ["Bodoni Moda", "serif"],
       },
       colors: {
         // Minimalistic color scheme with dark mode support
@@ -83,7 +83,7 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar'),
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
         '.minimal-card': {
           'background': '#FFFFFF',
