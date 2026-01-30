@@ -69,7 +69,7 @@ export default function HeroClassic({ isDarkMode }: Props) {
                         >
                             Building the <br />
                             <span className={isDarkMode ? 'text-white/40' : 'text-black/40'}>digital infrastructure</span> <br />
-                            for Africa's future.
+                            for Africa&apos;s future.
                         </motion.h1>
 
                         <motion.p

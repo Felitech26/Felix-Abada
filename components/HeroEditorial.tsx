@@ -102,7 +102,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
 
                         {/* Button content */}
                         <span className="relative z-10 font-medium transition-colors duration-500">
-                            Let's talk
+                            Let&apos;s talk
                         </span>
 
                         {/* WhatsApp icon */}

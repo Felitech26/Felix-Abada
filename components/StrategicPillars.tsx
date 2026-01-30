@@ -75,7 +75,7 @@ export default function StrategicPillars({ isDarkMode }: Props) {
              ${isDarkMode ? 'bg-white/5' : 'bg-black/5'}
           `}>
                         <span className="font-titleFont italic opacity-50 text-center">
-                            "Strategy is the art of sacrifice."
+                            &ldquo;Strategy is the art of sacrifice.&rdquo;
                         </span>
                     </div>
 

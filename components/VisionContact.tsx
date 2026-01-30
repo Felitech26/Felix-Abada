@@ -31,7 +31,7 @@ export default function VisionContact({ isDarkMode }: Props) {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl font-titleFont leading-relaxed italic opacity-80"
                     >
-                        "Platforms are built not just with code, but with culture—where collaboration, trust, and long-term thinking drive sustainable innovation."
+                        &ldquo;Platforms are built not just with code, but with culture—where collaboration, trust, and long-term thinking drive sustainable innovation.&rdquo;
                     </motion.h3>
                 </div>
 
@@ -48,9 +48,9 @@ export default function VisionContact({ isDarkMode }: Props) {
 
                 {/* Executive Call to Action */}
                 <div className={`p-12 md:p-20 border border-current border-opacity-10 bg-opacity-[0.02] ${isDarkMode ? 'bg-white' : 'bg-black'}`}>
-                    <h2 className="text-4xl md:text-6xl font-bold font-titleFont mb-8">Let's Build the Future</h2>
+                    <h2 className="text-4xl md:text-6xl font-bold font-titleFont mb-8">Let&apos;s Build the Future</h2>
                     <p className="text-xl max-w-2xl mx-auto mb-12 opacity-70">
-                        Open to collaboration, investment, and partnerships. Whether you’re an investor, founder, or ecosystem builder, let's explore how technology can create lasting impact.
+                        Open to collaboration, investment, and partnerships. Whether you&apos;re an investor, founder, or ecosystem builder, let&apos;s explore how technology can create lasting impact.
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
