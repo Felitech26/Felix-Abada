@@ -87,7 +87,8 @@ export default function Document() {
               "sameAs": [
                 "https://gh.linkedin.com/in/felix-abada-11707a1aa",
                 "https://www.facebook.com/felix.abada.52/",
-                "https://www.instagram.com/nii.devs/"
+                "https://www.instagram.com/nii.devs/",
+                "https://wa.me/233508591078"
               ],
               "founder": {
                 "@type": "Person",
