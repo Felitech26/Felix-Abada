@@ -85,7 +85,6 @@ export default function Document() {
               },
               "image": "https://www.felixabada.com/og-image.png",
               "sameAs": [
-                "https://github.com/Felitech26",
                 "https://gh.linkedin.com/in/felix-abada-11707a1aa",
                 "https://www.facebook.com/felix.abada.52/",
                 "https://www.instagram.com/nii.devs/"

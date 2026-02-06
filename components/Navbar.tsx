@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
 import Link from "next/link";
 import { logo1, logo2 } from "@/public/assets";
-import { TbBrandGithub } from 'react-icons/tb';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import ThemeToggle from './ThemeToggle';
 import UserInfo from './UserInfo';
@@ -399,7 +398,6 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
                     {/* Social Links */}
                     <div className="flex items-center gap-3">
                       {[
-                        { icon: TbBrandGithub, href: 'https://github.com/Felitech26', label: 'GitHub' },
                         { icon: FaLinkedinIn, href: 'https://gh.linkedin.com/in/felix-abada-11707a1aa', label: 'LinkedIn' },
                         { icon: FaInstagram, href: 'https://www.instagram.com/nii.devs/', label: 'Instagram' }
                       ].map((social, idx) => (
