@@ -58,7 +58,7 @@ export default function HeroClassic({ isDarkMode }: Props) {
                             className="flex items-center gap-3 mb-8"
                         >
                             <span className={`h-[1px] w-12 ${isDarkMode ? 'bg-white/40' : 'bg-black/40'}`} />
-                            <span className="text-sm font-mono uppercase tracking-[0.3em] opacity-60">Tech Executive | CTO</span>
+                            <span className="text-sm font-mono uppercase tracking-[0.3em] opacity-60">Software Engineer | Tech Executive | CTO</span>
                         </motion.div>
 
                         <motion.h1

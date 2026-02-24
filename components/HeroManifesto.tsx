@@ -41,7 +41,7 @@ export default function HeroManifesto({ isDarkMode }: HeroProps) {
                         transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="font-mono text-xs uppercase tracking-[0.3em] font-medium"
                     >
-                        Tech Executive | CTO | Co-Founder
+                        Software Engineer | Tech Executive | CTO
                     </motion.span>
                 </div>
 

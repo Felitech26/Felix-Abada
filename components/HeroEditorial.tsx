@@ -46,7 +46,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         className="flex items-center gap-3"
                     >
                         <div className={`h-px w-8 ${isDarkMode ? 'bg-white/60' : 'bg-black/60'}`} />
-                        <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">Tech Executive |Co-Founder & CTO at <a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
+                        <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">Software Engineer | Tech Executive | CTO at <a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
                     </motion.div>
 
                     <motion.h1

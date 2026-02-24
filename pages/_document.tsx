@@ -57,7 +57,7 @@ export default function Document() {
         <meta property="og:url" content="https://www.felixabada.com" />
         <meta property="og:title" content="Felix Abada - Tech Executive & Software Engineer" />
         <meta property="og:description" content="Leading engineering innovation at goParkly.co. Passionate about building high-performing teams and products." />
-        <meta property="og:image" content="https://www.felixabada.com/og-image.png" />
+        <meta property="og:image" content="https://www.felixabada.com/assets/Images/felix.png" />
         <meta property="og:logo" content="https://www.felixabada.com/android-chrome-512x512.png" />
 
         {/* Twitter Card Meta Tags */}
@@ -65,7 +65,7 @@ export default function Document() {
         <meta name="twitter:url" content="https://www.felixabada.com" />
         <meta name="twitter:title" content="Felix Abada - Tech Executive & Software Engineer" />
         <meta name="twitter:description" content="Leading engineering innovation at goParkly.co. Passionate about building high-performing teams and products." />
-        <meta name="twitter:image" content="https://www.felixabada.com/twitter-image.png" />
+        <meta name="twitter:image" content="https://www.felixabada.com/assets/Images/felix.png" />
 
         {/* Google Search Logo - Organization Schema */}
         <script
@@ -83,7 +83,7 @@ export default function Document() {
                 "width": 512,
                 "height": 512
               },
-              "image": "https://www.felixabada.com/og-image.png",
+              "image": "https://www.felixabada.com/assets/Images/felix.png",
               "sameAs": [
                 "https://gh.linkedin.com/in/felix-abada-11707a1aa",
                 "https://www.facebook.com/felix.abada.52/",
@@ -94,7 +94,7 @@ export default function Document() {
                 "@type": "Person",
                 "name": "Felix Abada",
                 "jobTitle": "CTO & Co-Founder",
-                "image": "https://www.felixabada.com/android-chrome-512x512.png"
+                "image": "https://www.felixabada.com/assets/Images/felix.png"
               }
             })
           }}

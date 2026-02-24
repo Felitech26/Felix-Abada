@@ -24,9 +24,39 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Felix Abada — Tech Executive | CTO</title>
+        <title>Felix Abada — Software Engineer | Tech Executive | CTO</title>
         <meta name="description" content="Visionary Technology Leader with African Roots. CTO at goParkly." />
         <link rel="canonical" href="https://www.felixabada.com" />
+
+        {/* JSON-LD Schema for Google Knowledge Graph */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Felix Abada",
+              "jobTitle": "Chief Technology Officer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "goParkly",
+                "url": "https://goparkly.co"
+              },
+              "url": "https://www.felixabada.com",
+              "image": "https://www.felixabada.com/assets/Images/felix.png",
+              "sameAs": [
+                "https://gh.linkedin.com/in/felix-abada-11707a1aa",
+                "https://www.facebook.com/felix.abada.52/",
+                "https://www.instagram.com/nii.devs/"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Accra",
+                "addressCountry": "Ghana"
+              }
+            })
+          }}
+        />
       </Head>
 
       <FuturisticCursor isDarkMode={isDarkMode} />
