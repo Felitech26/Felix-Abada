@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.felixabada.com</loc>
-    <lastmod>2024-11-26</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.felixabada.com/assets/Images/felix_google.png</image:loc>
+      <image:title>Felix Abada - Software Engineer, Tech Executive and CTO</image:title>
+      <image:caption>Felix Abada, CTO and Co-Founder at goParkly.co based in Accra, Ghana</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.felixabada.com/assets/Images/goparkly.png</image:loc>
+      <image:title>goParkly - Smart Parking Platform</image:title>
+      <image:caption>goParkly platform revolutionizing urban mobility through AI and real-time data</image:caption>
+    </image:image>
   </url>
 </urlset>

@@ -157,11 +157,11 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         <div className="relative w-full h-full overflow-hidden shadow-2xl bg-black/5" style={{ transform: "translateZ(0px)" }}>
                             <Image
                                 src={profileImg}
-                                alt="Felix Abada"
+                                alt="Felix Abada - Software Engineer, Tech Executive and CTO based in Accra, Ghana"
                                 fill
-                                className="object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                 priority
-                                quality={100}
+                                quality={90}
                                 sizes="(max-width: 738px) 100vw, (max-width: 1024px) 50vw, 600px"
                             />
 
