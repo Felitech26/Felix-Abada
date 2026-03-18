@@ -71,10 +71,6 @@ export default function VisionContact({ isDarkMode }: Props) {
                                 `}>
                                     <span className="relative z-10">Contact Executive Office</span>
                                 </a>
-                                <a href="https://gh.linkedin.com/in/felix-abada-11707a1aa" className="font-mono text-xs uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-3">
-                                    <span>LinkedIn Profile</span>
-                                    <span className="text-lg">↗</span>
-                                </a>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { profileImg } from '@/public/assets';
+import { felix } from '@/public/assets';
 
 interface Props {
     isDarkMode: boolean;
@@ -156,7 +156,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         {/* Image Container with depth */}
                         <div className="relative w-full h-full overflow-hidden shadow-2xl bg-black/5" style={{ transform: "translateZ(0px)" }}>
                             <Image
-                                src={profileImg}
+                                src={felix}
                                 alt="Felix Abada - Software Engineer, Tech Executive and CTO based in Accra, Ghana"
                                 fill
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

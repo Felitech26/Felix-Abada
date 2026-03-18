@@ -6,7 +6,8 @@ import online from "./Images/online.png";
 import goparkly from "./Images/goparkly.png";
 
 import felix_google from "./Images/felix_google.png";
+import felix from "./Images/felix.png";
 
 
 
-export { logo1, logo2, goparkly, profileImg, online,felix_google };
+export { logo1, logo2, goparkly, profileImg, online, felix_google, felix };
