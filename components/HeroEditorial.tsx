@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { felix } from '@/public/assets';
+import { profileImg } from '@/public/assets';
 
 interface Props {
     isDarkMode: boolean;
@@ -42,28 +42,41 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.8, delay: 2.8, ease: [0.16, 1, 0.3, 1] }}
                         className="flex items-center gap-3"
                     >
                         <div className={`h-px w-8 ${isDarkMode ? 'bg-white/60' : 'bg-black/60'}`} />
                         <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">Software Engineer | Tech Executive | CTO at <a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
                     </motion.div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl lg:text-7xl font-bold font-titleFont leading-[1.1]"
-                    >
-                        Engineering solutions <br />
-                        <span className="italic font-serif font-light opacity-80">that transform ideas</span> <br />
-                        into impact.
-                    </motion.h1>
+                    <div className="text-5xl lg:text-7xl font-bold font-titleFont leading-[1.1] overflow-hidden flex flex-col gap-2">
+                        <motion.div
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.8, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            Engineering solutions
+                        </motion.div>
+                        <motion.div
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.8, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <span className="italic font-serif font-light opacity-80">that transform ideas</span>
+                        </motion.div>
+                        <motion.div
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.8, delay: 2.7, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            into impact.
+                        </motion.div>
+                    </div>
 
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.8, delay: 2.9, ease: [0.16, 1, 0.3, 1] }}
                         className="text-md font-light leading-relaxed opacity-70 max-w-xl"
                     >
                         I am Felix Abada. A Tech Executive and Strategic Leader based in Ghana, bridging the gap between complex engineering and scalable business impact. Currently defining the future of urban mobility at <span className="font-medium border-b border-current"><a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
@@ -73,7 +86,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
+                        transition={{ duration: 0.8, delay: 3.0, ease: [0.16, 1, 0.3, 1] }}
                         className="flex items-center gap-4 flex-wrap"
                     >
                         <span className="text-sm opacity-60">Lets connect</span>
@@ -105,36 +118,14 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         </div>
                     </motion.div>
 
-                    {/* Let's Talk Button */}
-                    <motion.a
-                        href="tel:+233508591078"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className={`group relative inline-flex items-center gap-2 px-6 py-3 border overflow-hidden transition-all duration-500 ${isDarkMode
-                            ? 'border-white/50 text-white hover:text-black'
-                            : 'border-black/50 text-black hover:text-white'
-                            }`}
-                    >
-                        {/* Sliding background fill */}
-                        <div
-                            className={`absolute inset-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out ${isDarkMode ? 'bg-white' : 'bg-black'
-                                }`}
-                        />
-
-                        {/* Button content */}
-                        <span className="relative z-10 font-medium transition-colors duration-500">
-                            Let&apos;s talk
-                        </span>
-                    </motion.a>
                 </div>
 
                 {/* Futuristic 3D Hover/Tilt Design */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 1.2, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
                     className="lg:col-span-5 order-1 lg:order-2 flex items-center justify-center perspective-[2000px]"
                 >
                     <motion.div
@@ -156,7 +147,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         {/* Image Container with depth */}
                         <div className="relative w-full h-full overflow-hidden shadow-2xl bg-black/5" style={{ transform: "translateZ(0px)" }}>
                             <Image
-                                src={felix}
+                                src={profileImg}
                                 alt="Felix Abada - Software Engineer, Tech Executive and CTO based in Accra, Ghana"
                                 fill
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

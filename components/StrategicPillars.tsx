@@ -75,7 +75,7 @@ export default function StrategicPillars({ isDarkMode }: Props) {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.6 }}
                     className="mb-20"
                 >
@@ -88,7 +88,7 @@ export default function StrategicPillars({ isDarkMode }: Props) {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
                 >
                     {pillars.slice(0, 3).map((pillar, i) => (
@@ -130,7 +130,7 @@ export default function StrategicPillars({ isDarkMode }: Props) {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
                 >
                     {pillars.slice(3, 5).map((pillar, i) => (

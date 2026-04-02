@@ -12,7 +12,7 @@ export default function AboutNarrative({ isDarkMode }: Props) {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                     className="text-2xl md:text-3xl font-light leading-relaxed"
                 >
                     <span className="font-titleFont font-bold italic opacity-40 pr-4">&ldquo;</span>
@@ -23,7 +23,7 @@ export default function AboutNarrative({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ delay: 0.2 }}
                     >
                         <p className="mb-6">
@@ -37,7 +37,7 @@ export default function AboutNarrative({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ delay: 0.4 }}
                     >
                         <p className="mb-6">

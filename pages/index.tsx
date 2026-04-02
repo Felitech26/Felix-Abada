@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Head from 'next/head';
+import PageLoader from '@/components/PageLoader';
 import FuturisticCursor from '@/components/FuturisticCursor';
 import Navbar from '@/components/Navbar';
 import HeroEditorial from '@/components/HeroEditorial';
@@ -14,6 +16,14 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    // Force scroll to top on reload so it always shows the hero first
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+
     setIsDarkMode(document.documentElement.classList.contains('dark'));
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains('dark'));
@@ -114,10 +124,16 @@ export default function Home() {
         />
       </Head>
 
+      <PageLoader />
       <FuturisticCursor isDarkMode={isDarkMode} />
       <Navbar isDarkMode={isDarkMode} />
 
-      <main className={`min-h-screen font-body transition-colors duration-500 ${isDarkMode ? 'bg-[#050505] text-[#e0e0e0]' : 'bg-[#fafafa] text-[#1a1a1a]'}`}>
+      <motion.main 
+        initial={{ y: "100vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1.2, delay: 3, ease: [0.76, 0, 0.24, 1] }}
+        className={`min-h-screen font-body transition-colors duration-500 relative z-10 ${isDarkMode ? 'bg-[#050505] text-[#e0e0e0]' : 'bg-[#fafafa] text-[#1a1a1a]'}`}
+      >
 
         {/* HERO: Authentic Editorial */}
         <HeroEditorial isDarkMode={isDarkMode} />
@@ -148,7 +164,7 @@ export default function Home() {
           </div>
         </footer>
 
-      </main>
+      </motion.main>
     </>
   );
 }

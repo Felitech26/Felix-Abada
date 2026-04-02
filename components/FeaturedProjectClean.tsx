@@ -17,7 +17,7 @@ export default function FeaturedProjectClean({ isDarkMode }: Props) {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                     className="mb-12 flex items-center justify-between"
                 >
                     <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-40">Selected Work</span>
@@ -30,7 +30,7 @@ export default function FeaturedProjectClean({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ duration: 0.8 }}
                         className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-900 shadow-2xl shadow-black/5 dark:shadow-white/5 order-2 lg:order-1"
                     >
@@ -48,7 +48,7 @@ export default function FeaturedProjectClean({ isDarkMode }: Props) {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="order-1 lg:order-2 mb-10 lg:mb-0"
                     >

@@ -81,17 +81,13 @@ export default function ThemeToggle() {
 
   return (
     <div
-      className={`inline-flex items-center rounded-full p-0.5 transition-colors backdrop-blur-sm ${
-        isDarkMode
-          ? 'bg-background-dark/30 border border-border-dark-mode'
-          : 'bg-background/30 border border-border'
-      }`}
+      className={`inline-flex items-center rounded-none p-0.5 transition-colors bg-transparent`}
     >
       {options.map((option) => (
         <button
           key={option.value}
           onClick={() => handleThemeChange(option.value)}
-          className={`relative px-2.5 py-1.5 rounded-full transition-all duration-200 ${
+          className={`relative px-2.5 py-1.5 rounded-none transition-all duration-200 ${
             theme === option.value
               ? isDarkMode
                 ? 'text-text-dark-primary'
@@ -102,16 +98,7 @@ export default function ThemeToggle() {
           }`}
           aria-label={option.label}
         >
-          {theme === option.value && (
-            <motion.div
-              layoutId="activeTheme"
-              className={`absolute inset-0 rounded-full ${
-                isDarkMode ? 'bg-background-dark/60' : 'bg-white/60'
-              }`}
-              style={{ boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)' }}
-              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-            />
-          )}
+          {/* No active background/dot requested */}
           <span className="relative z-10">{option.icon}</span>
         </button>
       ))}
