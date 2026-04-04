@@ -94,7 +94,7 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
                   : 'bg-black text-white hover:bg-black/90'
               }`}
             >
-              Let's talk
+              Let&apos;s talk
             </motion.a>
 
             <div className="lg:hidden">
@@ -161,7 +161,7 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
               className="flex justify-between items-end border-t pt-8 border-current/10"
             >
               <a href="tel:+233508591078" className={`text-sm font-semibold tracking-wider hover:opacity-70 transition-opacity ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                Let's talk
+                Let&apos;s talk
               </a>
               <div className="flex gap-4">
                 {[
