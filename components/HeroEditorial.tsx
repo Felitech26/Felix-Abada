@@ -133,10 +133,10 @@ export default function HeroEditorial({ isDarkMode }: Props) {
 
                         {/* Corner Brackets (Floating) */}
                         <div className="absolute inset-0 pointer-events-none z-30" style={{ transform: "translateZ(30px)" }}>
-                            <div className="absolute -top-4 -left-4 w-16 h-16 border-t border-l border-current opacity-60" />
-                            <div className="absolute -top-4 -right-4 w-16 h-16 border-t border-r border-current opacity-60" />
-                            <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b border-l border-current opacity-60" />
-                            <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b border-r border-current opacity-60" />
+                            <div className="absolute -top-3 -left-3 w-10 h-10 border-t border-l border-current opacity-60" />
+                            <div className="absolute -top-3 -right-3 w-10 h-10 border-t border-r border-current opacity-60" />
+                            <div className="absolute -bottom-3 -left-3 w-10 h-10 border-b border-l border-current opacity-60" />
+                            <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b border-r border-current opacity-60" />
                         </div>
 
                         {/* Credentials Card */}
@@ -165,7 +165,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                                     </span>
                                     <span className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-70">
-                                        Available for opportunities
+                                        Open to strategic opportunities
                                     </span>
                                 </div>
                             </div>
@@ -173,7 +173,9 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                             {/* Stats grid */}
                             <div className={`grid grid-cols-3 gap-x-4 py-6 border-y ${isDarkMode ? 'border-white/10' : 'border-black/10'}`}>
                                 <div className={`text-center ${isDarkMode ? 'border-r border-white/10' : 'border-r border-black/10'}`}>
-                                    <div className="font-titleFont text-3xl lg:text-4xl font-bold leading-none">5<span className="opacity-50">+</span></div>
+                                    <div className="font-titleFont text-3xl lg:text-4xl font-bold leading-none">
+                                        5<span className="font-mono text-lg lg:text-xl font-light opacity-60 align-top ml-0.5">+</span>
+                                    </div>
                                     <div className="font-mono text-[9px] uppercase tracking-[0.15em] opacity-60 mt-2">Years</div>
                                 </div>
                                 <div className={`text-center ${isDarkMode ? 'border-r border-white/10' : 'border-r border-black/10'}`}>
@@ -190,9 +192,9 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                             <div className="text-center space-y-3">
                                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-50">Currently building</div>
                                 <div className="flex items-center justify-center gap-4">
-                                    <span className="font-titleFont text-lg lg:text-xl">goParkly</span>
-                                    <span className={`h-4 w-px ${isDarkMode ? 'bg-white/30' : 'bg-black/30'}`} />
-                                    <span className="font-titleFont text-lg lg:text-xl">ScoutVerse.ai</span>
+                                    <span className="font-titleFont text-lg lg:text-xl font-semibold">goParkly</span>
+                                    <span className={`h-4 w-px ${isDarkMode ? 'bg-white/40' : 'bg-black/40'}`} />
+                                    <span className="font-titleFont text-lg lg:text-xl font-semibold">ScoutVerse.ai</span>
                                 </div>
                             </div>
 

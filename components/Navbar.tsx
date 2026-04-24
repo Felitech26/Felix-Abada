@@ -29,15 +29,15 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 flex justify-center mt-6 lg:mt-8 px-4 pointer-events-none"
+        className="fixed top-0 left-0 right-0 z-50 flex justify-center mt-6 lg:mt-8 px-0 md:px-4 pointer-events-none"
       >
-        <div className={`pointer-events-auto flex items-center justify-between px-6 py-2 lg:py-3 transition-all duration-500 ease-out rounded-none ${
+        <div className={`pointer-events-auto flex items-center justify-between lg:px-6 py-2 lg:py-3 transition-all duration-500 ease-out rounded-none ${
           scrolled
-            ? `backdrop-blur-xl border ${isDarkMode
+            ? `px-4 backdrop-blur-xl border ${isDarkMode
                 ? 'bg-black/40 border-white/10'
                 : 'bg-white/40 border-black/10 shadow-[0_1px_4px_rgba(0,0,0,0.02)]'}`
-            : 'bg-transparent border border-transparent'
-          } ${scrolled ? 'w-[90%] lg:w-[60%]' : 'w-full lg:w-[80%]'}`}
+            : 'px-3 bg-transparent border border-transparent'
+          } ${scrolled ? 'w-[96%] lg:w-[60%]' : 'w-full lg:w-[80%]'}`}
         >
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-3 group">
@@ -56,7 +56,13 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className={`hidden lg:flex items-center gap-8 px-6 py-2 border transition-colors duration-500 ${
+            scrolled
+              ? 'bg-transparent border-transparent shadow-none'
+              : `backdrop-blur-xl ${isDarkMode
+                  ? 'bg-black/40 border-white/10'
+                  : 'bg-white/40 border-black/10 shadow-[0_1px_4px_rgba(0,0,0,0.02)]'}`
+          }`}>
             {['Work', 'About', 'Contact'].map((item) => (
               <Link 
                 key={item} 
