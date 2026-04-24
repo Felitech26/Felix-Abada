@@ -7,7 +7,9 @@ import goparkly from "./Images/goparkly.png";
 
 import felix_google from "./Images/felix_google.png";
 import felix from "./Images/felix.png";
+import felixPortrait from "./Images/felix.jpg";
+import scoutverse from "./Images/ScoutVerse4k.png";
 
 
 
-export { logo1, logo2, goparkly, profileImg, online, felix_google, felix };
+export { logo1, logo2, goparkly, profileImg, online, felix_google, felix, felixPortrait, scoutverse };

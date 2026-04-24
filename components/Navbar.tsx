@@ -31,10 +31,12 @@ export default function Navbar({ isDarkMode }: NavbarProps) {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50 flex justify-center mt-6 lg:mt-8 px-4 pointer-events-none"
       >
-        <div className={`pointer-events-auto flex items-center justify-between px-6 py-2 lg:py-3 backdrop-blur-xl transition-all duration-500 ease-out border rounded-none ${
-          isDarkMode 
-            ? 'bg-black/40 border-white/10 shadow-[0_4px_10px_rgba(255,255,255,0.02)]' 
-            : 'bg-white/40 border-black/10 shadow-[0_2px_10px_rgba(0,0,0,0.03)]'
+        <div className={`pointer-events-auto flex items-center justify-between px-6 py-2 lg:py-3 transition-all duration-500 ease-out rounded-none ${
+          scrolled
+            ? `backdrop-blur-xl border ${isDarkMode
+                ? 'bg-black/40 border-white/10'
+                : 'bg-white/40 border-black/10 shadow-[0_1px_4px_rgba(0,0,0,0.02)]'}`
+            : 'bg-transparent border border-transparent'
           } ${scrolled ? 'w-[90%] lg:w-[60%]' : 'w-full lg:w-[80%]'}`}
         >
           {/* Logo */}

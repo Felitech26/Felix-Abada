@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { profileImg } from '@/public/assets';
+import { felixPortrait } from '@/public/assets';
 
 interface Props {
     isDarkMode: boolean;
@@ -10,13 +10,8 @@ export default function HeroEditorial({ isDarkMode }: Props) {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
-    // 3D Rotation transforms
-    const rotateX = useTransform(y, [-100, 100], [10, -10]); // Reduced rotation for elegance
+    const rotateX = useTransform(y, [-100, 100], [10, -10]);
     const rotateY = useTransform(x, [-100, 100], [-10, 10]);
-
-    // Gloss/Sheen effect movement
-    const sheenX = useTransform(x, [-100, 100], [-20, 20]);
-    const sheenY = useTransform(y, [-100, 100], [-20, 20]);
 
     function handleMouseMove(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         const rect = event.currentTarget.getBoundingClientRect();
@@ -32,12 +27,12 @@ export default function HeroEditorial({ isDarkMode }: Props) {
     }
 
     return (
-        <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 px-6 lg:px-32 bg-transparent relative overflow-hidden flex items-center justify-center">
+        <section className="w-full pt-36 pb-20 lg:pt-48 lg:pb-28 px-6 gap-[5rem] bg-transparent relative overflow-hidden flex flex-col lg:flex-row items-center justify-center">
 
-            <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+           
 
                 {/* Left: Text Content */}
-                <div className="lg:col-span-7 space-y-8 order-2 lg:order-1 z-10">
+                <div className="w-ffull lg:w-[50%] lg:col-span-7 space-y-8 order-2 lg:order-1 z-10">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -79,7 +74,7 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                         transition={{ duration: 0.8, delay: 2.9, ease: [0.16, 1, 0.3, 1] }}
                         className="text-md font-light leading-relaxed opacity-70 max-w-xl"
                     >
-                        I am Felix Abada. A Tech Executive and Strategic Leader based in Ghana, bridging the gap between complex engineering and scalable business impact. Currently defining the future of urban mobility at <span className="font-medium border-b border-current"><a href="https://goparkly.co" target="_blank">goParkly.co</a></span>
+                        I am Felix Abada. A Tech Executive and Strategic Leader based in Ghana, bridging the gap between complex engineering and scalable business impact. Currently defining the future of urban mobility at <span className="font-medium border-b border-current"><a href="https://goparkly.co" target="_blank">goParkly.co</a></span> and reshaping football scouting through AI at <span className="font-medium border-b border-current">ScoutVerse.ai</span>.
                     </motion.p>
 
                     {/* Social Links */}
@@ -125,14 +120,14 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.6, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
                     className="lg:col-span-5 order-1 lg:order-2 flex items-center justify-center perspective-[2000px]"
                 >
                     <motion.div
                         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={() => { x.set(0); y.set(0); }}
-                        className="relative group w-full max-w-sm aspect-[2/3] cursor-none"
+                        className="relative group w-full max-w-sm aspect-[4/6] lg:aspect-[5/7] cursor-none"
                     >
 
 
@@ -144,26 +139,85 @@ export default function HeroEditorial({ isDarkMode }: Props) {
                             <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b border-r border-current opacity-60" />
                         </div>
 
-                        {/* Image Container with depth */}
-                        <div className="relative w-full h-full overflow-hidden shadow-2xl bg-black/5" style={{ transform: "translateZ(0px)" }}>
-                            <Image
-                                src={profileImg}
-                                alt="Felix Abada - Software Engineer, Tech Executive and CTO based in Accra, Ghana"
-                                fill
-                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                priority
-                                quality={90}
-                                sizes="(max-width: 738px) 100vw, (max-width: 1024px) 50vw, 600px"
-                            />
+                        {/* Credentials Card */}
+                        <div
+                            className={`relative w-full h-full overflow-hidden shadow-2xl flex flex-col justify-between p-8 ${
+                                isDarkMode
+                                    ? 'bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10'
+                                    : 'bg-gradient-to-br from-black/[0.03] to-black/[0.01] border border-black/10'
+                            }`}
+                            style={{ transform: "translateZ(0px)" }}
+                        >
+                            {/* Top: Portrait + Status */}
+                            <div className="flex flex-col items-center text-center gap-5">
+                                <div className={`relative w-32 h-32 lg:w-40 lg:h-40 overflow-hidden rounded-full ring-4 ${isDarkMode ? 'ring-[#050505]' : 'ring-[#fafafa]'}`}>
+                                    <Image
+                                        src={felixPortrait}
+                                        alt="Felix Abada"
+                                        fill
+                                        className="object-cover"
+                                        sizes="160px"
+                                    />
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                                    </span>
+                                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-70">
+                                        Available for opportunities
+                                    </span>
+                                </div>
+                            </div>
 
-                            {/* Subtle tint overlay on hover */}
-                            <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none opacity-0 group-hover:opacity-20 ${isDarkMode ? 'bg-blue-500' : 'bg-black'}`} />
+                            {/* Stats grid */}
+                            <div className={`grid grid-cols-3 gap-x-4 py-6 border-y ${isDarkMode ? 'border-white/10' : 'border-black/10'}`}>
+                                <div className={`text-center ${isDarkMode ? 'border-r border-white/10' : 'border-r border-black/10'}`}>
+                                    <div className="font-titleFont text-3xl lg:text-4xl font-bold leading-none">5<span className="opacity-50">+</span></div>
+                                    <div className="font-mono text-[9px] uppercase tracking-[0.15em] opacity-60 mt-2">Years</div>
+                                </div>
+                                <div className={`text-center ${isDarkMode ? 'border-r border-white/10' : 'border-r border-black/10'}`}>
+                                    <div className="font-titleFont text-3xl lg:text-4xl font-bold leading-none">2</div>
+                                    <div className="font-mono text-[9px] uppercase tracking-[0.15em] opacity-60 mt-2">Ventures</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="font-serif text-3xl lg:text-4xl font-light italic leading-none">CTO</div>
+                                    <div className="font-mono text-[9px] uppercase tracking-[0.15em] opacity-60 mt-2">Founder</div>
+                                </div>
+                            </div>
+
+                            {/* Ventures */}
+                            <div className="text-center space-y-3">
+                                <div className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-50">Currently building</div>
+                                <div className="flex items-center justify-center gap-4">
+                                    <span className="font-titleFont text-lg lg:text-xl">goParkly</span>
+                                    <span className={`h-4 w-px ${isDarkMode ? 'bg-white/30' : 'bg-black/30'}`} />
+                                    <span className="font-titleFont text-lg lg:text-xl">ScoutVerse.ai</span>
+                                </div>
+                            </div>
+
+                            {/* Footer tags */}
+                            <div className="space-y-3">
+                                <div className={`h-px w-full ${isDarkMode ? 'bg-white/10' : 'bg-black/10'}`} />
+                                <div className="flex flex-wrap gap-2">
+                                    {['Platform Architecture', 'Applied AI', 'Computer Vision', 'PropTech', 'SportsTech'].map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className={`font-mono text-[10px] uppercase tracking-[0.1em] px-2 py-1 border ${
+                                                isDarkMode ? 'border-white/15 opacity-70' : 'border-black/15 opacity-70'
+                                            }`}
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
 
                     </motion.div>
                 </motion.div>
 
-            </div>
+           
         </section>
     );
 }
