@@ -1,105 +1,61 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
-import { HiOutlineComputerDesktop } from 'react-icons/hi2';
 
 type Theme = 'light' | 'dark' | 'system';
+const options: Theme[] = ['light', 'dark', 'system'];
 
+function apply(theme: Theme) {
+  const dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.classList.toggle('dark', dark);
+}
+
+/** Segmented Light / Dark / System switch. Remembers the choice. */
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [theme, setTheme] = useState<Theme>('system');
 
   useEffect(() => {
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system')) {
-      setTheme(savedTheme);
-      applyTheme(savedTheme);
-    } else {
-      // Default to system preference
-      setTheme('system');
-      applyTheme('system');
-    }
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem('theme');
+    } catch {}
+    const initial: Theme = saved === 'light' || saved === 'dark' ? saved : 'system';
+    setTheme(initial);
 
-    // Initial dark mode check
-    setIsDarkMode(document.documentElement.classList.contains('dark'));
-
-    // Watch for theme changes
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.documentElement.classList.contains('dark'));
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    // Listen for system preference changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleSystemThemeChange = () => {
-      const currentTheme = localStorage.getItem('theme') as Theme;
-      if (currentTheme === 'system') {
-        applyTheme('system');
-      }
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => {
+      let cur: string | null = null;
+      try {
+        cur = localStorage.getItem('theme');
+      } catch {}
+      if (cur !== 'light' && cur !== 'dark') apply('system');
     };
-
-    mediaQuery.addEventListener('change', handleSystemThemeChange);
-
-    return () => {
-      observer.disconnect();
-      mediaQuery.removeEventListener('change', handleSystemThemeChange);
-    };
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
   }, []);
 
-  const applyTheme = (selectedTheme: Theme) => {
-    if (selectedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else if (selectedTheme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      // System preference
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (systemPrefersDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
+  const choose = (t: Theme) => {
+    setTheme(t);
+    try {
+      localStorage.setItem('theme', t);
+    } catch {}
+    apply(t);
   };
-
-  const handleThemeChange = (newTheme: Theme) => {
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
-  };
-
-  const options: { value: Theme; icon: React.ReactNode; label: string }[] = [
-    { value: 'system', icon: <HiOutlineComputerDesktop className="w-4 h-4" />, label: 'System' },
-    { value: 'light', icon: <IoSunnyOutline className="w-4 h-4" />, label: 'Light' },
-    { value: 'dark', icon: <IoMoonOutline className="w-4 h-4" />, label: 'Dark' },
-  ];
 
   return (
-    <div
-      className={`inline-flex items-center rounded-none p-0.5 transition-colors bg-transparent`}
-    >
-      {options.map((option) => (
+    <div className="relative inline-grid grid-cols-3 border border-fg/20" role="radiogroup" aria-label="Colour theme">
+      {options.map((o) => (
         <button
-          key={option.value}
-          onClick={() => handleThemeChange(option.value)}
-          className={`relative px-2.5 py-1.5 rounded-none transition-all duration-200 ${
-            theme === option.value
-              ? isDarkMode
-                ? 'text-text-dark-primary'
-                : 'text-text-primary'
-              : isDarkMode
-              ? 'text-text-dark-tertiary hover:text-text-dark-secondary'
-              : 'text-text-tertiary hover:text-text-secondary'
+          key={o}
+          type="button"
+          role="radio"
+          aria-checked={theme === o}
+          onClick={() => choose(o)}
+          className={`relative px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 ${
+            theme === o ? 'text-bg' : 'text-fg/70 hover:text-fg'
           }`}
-          aria-label={option.label}
         >
-          {/* No active background/dot requested */}
-          <span className="relative z-10">{option.icon}</span>
+          {theme === o && <motion.span layoutId="theme-pill" className="absolute inset-0 bg-fg" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />}
+          <span className="relative">{o}</span>
         </button>
       ))}
     </div>

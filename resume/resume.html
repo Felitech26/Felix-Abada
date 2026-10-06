@@ -1,0 +1,315 @@
+<title>Felix Abada Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..800;1,6..96,400..600&family=Lato:wght@300;400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two A4 sheets, single reading column for clarity and ATS parsing.
+   Sheet 1: masthead, proof figures, profile, the two current roles. Sheet 2: earlier work, education,
+   selected work, competencies, leadership. Matches felixabada.com (Bodoni + Lato, ink on paper, teal accent). */
+:root {
+  --ground: #e9ebea;
+  --paper: #fdfdfc;
+  --ink: #16191a;
+  --ink-2: #41484b;
+  --ink-3: #737b7e;
+  --rule: #d6dbda;
+  --accent: #1d5c63;
+  --accent-soft: #e4eeee;
+  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --f-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0b0d0d; --paper: #141818; --ink: #e8ecea; --ink-2: #b8c0c0; --ink-3: #879090;
+    --rule: #2a3131; --accent: #7fb9be; --accent-soft: #1b2a2b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0b0d0d; --paper: #141818; --ink: #e8ecea; --ink-2: #b8c0c0; --ink-3: #879090;
+  --rule: #2a3131; --accent: #7fb9be; --accent-soft: #1b2a2b; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.45;
+  padding-inline: 16px;
+  padding-block: 32px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.doc { display: grid; gap: 24px; justify-content: center; }
+.sheet {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  background: var(--paper);
+  padding: 15mm 18mm 11mm;
+  box-shadow: 0 1px 2px rgb(0 0 0 / .06), 0 12px 40px rgb(0 0 0 / .08);
+  display: flex;
+  flex-direction: column;
+  gap: 6mm;
+}
+.grow { flex: 1; display: flex; flex-direction: column; gap: 6.5mm; }
+
+/* Masthead */
+.mast { display: grid; grid-template-columns: 1fr auto; gap: 5mm 10mm; align-items: end; }
+.mast h1 { font-family: var(--f-display); font-weight: 700; font-size: 42pt; line-height: .95; letter-spacing: -.01em; margin: 0; }
+.mast h1 em { font-style: italic; font-weight: 400; }
+.role { margin: 3mm 0 0; font-family: var(--f-mono); font-size: 8.4pt; letter-spacing: .12em; white-space: nowrap; text-transform: uppercase; color: var(--ink-2); }
+.role b { color: var(--accent); font-weight: 500; }
+.contact {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 1.4mm; justify-items: end;
+  font-family: var(--f-mono); font-size: 8.6pt; color: var(--ink-2); font-variant-numeric: tabular-nums;
+}
+.contact li { display: flex; gap: 2.4mm; align-items: baseline; }
+.contact span { color: var(--ink-3); text-transform: uppercase; letter-spacing: .1em; font-size: 7.2pt; }
+
+.proof { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.proof div { padding: 3.6mm 0 3.2mm; display: flex; align-items: baseline; gap: 2.4mm; }
+.proof div + div { padding-left: 4.5mm; border-left: 1px solid var(--rule); }
+.proof strong { font-family: var(--f-display); font-size: 19pt; font-weight: 700; line-height: 1; }
+.proof span { font-family: var(--f-mono); font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); line-height: 1.3; white-space: nowrap; }
+
+h2 {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 4mm;
+  font-family: var(--f-mono); font-weight: 500; font-size: 8.4pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 3.4mm; padding-bottom: 1.8mm; border-bottom: 1px solid var(--rule);
+}
+h2 small { font-size: 7.4pt; letter-spacing: .1em; color: var(--ink-3); font-weight: 400; }
+
+.profile { margin: 0; font-size: 11.2pt; line-height: 1.55; font-weight: 400; color: var(--ink-2); }
+.profile strong { color: var(--ink); }
+.profile strong { font-weight: 700; }
+
+.job { display: grid; gap: 1.6mm; break-inside: avoid; }
+.job + .job { margin-top: 5mm; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; flex-wrap: wrap; }
+.job h3 { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 15pt; line-height: 1.15; text-wrap: balance; }
+.job h3 .org { font-style: italic; font-weight: 400; }
+.when { font-family: var(--f-mono); font-size: 8.4pt; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tagline { margin: 0; color: var(--ink-2); font-size: 10pt; font-style: italic; }
+.tagline a { font-style: normal; font-family: var(--f-mono); font-size: 8.6pt; color: var(--accent); border-bottom: 1px solid var(--rule); }
+.job ul { margin: .6mm 0 0; padding-left: 4.2mm; display: grid; gap: 1.1mm; }
+.job li { padding-left: .8mm; }
+.job li::marker { content: "–  "; color: var(--accent); }
+
+.edu { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; flex-wrap: wrap; }
+.edu h3 { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 14pt; }
+.edu p { margin: 1mm 0 0; color: var(--ink-2); }
+
+.work { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.6mm 8mm; }
+.work div { display: grid; gap: .4mm; align-content: start; }
+.work b { font-family: var(--f-display); font-size: 12pt; }
+.work a { font-family: var(--f-mono); font-size: 8.2pt; color: var(--accent); }
+.work p { margin: 0; color: var(--ink-2); font-size: 9.8pt; }
+
+.caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm 8mm; margin: 0; }
+.caps div { min-width: 0; }
+.caps dt { font-weight: 700; margin-bottom: .6mm; }
+.caps dd { margin: 0; color: var(--ink-2); font-size: 10pt; line-height: 1.42; }
+
+.lead { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10mm; align-items: start; }
+.principles { margin: 0; padding: 0; list-style: none; display: grid; gap: 2.6mm; color: var(--ink-2); font-size: 10pt; }
+.principles b { color: var(--ink); }
+.quote { margin: 0; padding-left: 5mm; border-left: 1.5px solid var(--accent); font-family: var(--f-display); font-style: italic; font-size: 14pt; line-height: 1.38; }
+.quote cite { display: block; margin-top: 2.4mm; font-family: var(--f-mono); font-style: normal; font-size: 7.4pt; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+.foot { display: flex; justify-content: space-between; gap: 4mm; flex-wrap: wrap; font-family: var(--f-mono); font-size: 7.4pt; color: var(--ink-3); letter-spacing: .08em; text-transform: uppercase; border-top: 1px solid var(--rule); padding-top: 2.6mm; }
+.status { display: inline-flex; align-items: center; gap: 1.8mm; }
+.status::before { content: ""; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: #2e9e6b; }
+
+/* Narrow screens: sheets become one fluid page */
+@media screen and (max-width: 760px) {
+  body { padding: 0; font-size: 15px; }
+  .doc { gap: 0; display: block; }
+  .sheet { width: 100%; min-height: 0; padding: 28px 16px 24px; box-shadow: none; gap: 28px; }
+  .sheet + .sheet { padding-top: 4px; }
+  .sheet:first-child .foot { display: none; }
+  .grow { gap: 28px; }
+  .mast { grid-template-columns: 1fr; }
+  .mast h1 { font-size: 44px; }
+  .role { font-size: 11px; }
+  .contact { justify-items: start; font-size: 13px; }
+  .contact span { font-size: 10px; min-width: 5.5em; }
+  .proof { grid-template-columns: repeat(2, 1fr); }
+  .proof div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .proof div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  .proof strong { font-size: 26px; }
+  .proof span { font-size: 10px; }
+  .profile { font-size: 17px; }
+  h2 { font-size: 11px; margin-bottom: 14px; padding-bottom: 6px; }
+  h2 small { font-size: 10px; }
+  .job h3, .edu h3 { font-size: 21px; }
+  .when, .foot, .tagline a, .work a { font-size: 12px; }
+  .tagline, .work p, .caps dd, .principles { font-size: 15px; }
+  .work b { font-size: 18px; }
+  .job + .job { margin-top: 24px; }
+  .job ul { padding-left: 18px; gap: 8px; }
+  .work, .caps, .lead { grid-template-columns: 1fr; gap: 18px; }
+  .quote { font-size: 20px; padding-left: 16px; }
+  .quote cite { font-size: 10px; }
+}
+
+/* Print / PDF: exact A4 sheets, always light */
+@page { size: A4; margin: 0; }
+@media print {
+  :root, :root[data-theme="dark"] {
+    --ground: #fff; --paper: #fff; --ink: #16191a; --ink-2: #41484b; --ink-3: #737b7e;
+    --rule: #d6dbda; --accent: #1d5c63; --accent-soft: #e4eeee; color-scheme: light;
+  }
+  body { padding: 0; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .doc { display: block; }
+  .sheet { box-shadow: none; width: 210mm; height: 297mm; min-height: 0; overflow: hidden; break-after: page; }
+  .sheet:last-child { break-after: auto; }
+}
+</style>
+
+<main class="doc">
+  <article class="sheet" aria-label="Page 1">
+    <header class="mast">
+      <div>
+        <h1>Felix <em>Abada</em></h1>
+        <p class="role">Software Engineer <b>/</b> Full-Stack Developer <b>/</b> CTO</p>
+      </div>
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:felitech26@outlook.com">felitech26@outlook.com</a></li>
+        <li><span>Phone</span><a href="https://wa.me/233508591078">+233 50 859 1078</a></li>
+        <li><span>Web</span><a href="https://www.felixabada.com">felixabada.com</a></li>
+        <li><span>LinkedIn</span><a href="https://gh.linkedin.com/in/felix-abada-11707a1aa">in/felix-abada-11707a1aa</a></li>
+        <li><span>GitHub</span><a href="https://github.com/Felitech26">github.com/Felitech26</a></li>
+      </ul>
+    </header>
+
+    <div class="proof" aria-label="At a glance">
+      <div><strong>5+</strong><span>Years<br>in software</span></div>
+      <div><strong>2</strong><span>Tech ventures<br>founded</span></div>
+      <div><strong>99.9%</strong><span>Uptime<br>at goParkly</span></div>
+      <div><strong>Accra</strong><span>Ghana ·<br>remote-ready</span></div>
+    </div>
+
+    <div class="grow">
+      <section>
+        <h2>Profile</h2>
+        <p class="profile">Software engineer and technical co-founder who takes products from idea to production. As <strong>CTO of goParkly</strong> I lead engineering for a smart-parking platform with real-time availability and in-app payments. As <strong>founder of ScoutVerse.ai</strong> I am building an AI platform that turns ordinary phone video into trusted football performance data. I work across the whole product, from the user experience to back-end systems, data, cloud infrastructure and applied AI, and I lead the teams that deliver it.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <h3>CTO &amp; Co-Founder, <span class="org">goParkly</span></h3>
+            <span class="when">2025 – Present</span>
+          </div>
+          <p class="tagline">Smart-parking platform connecting drivers with available spaces · Accra, Ghana · <a href="https://www.goparkly.co">goparkly.co</a></p>
+          <ul>
+            <li>Lead technology strategy and platform architecture for real-time space availability, bookings and in-app payments, serving both drivers and parking operators.</li>
+            <li>Built the platform for reliability from day one and keep production running at <strong>99.9% uptime</strong>.</li>
+            <li>Oversee the full product lifecycle, from the web and mobile experience to back-end services, data and cloud infrastructure.</li>
+            <li>Translate business goals into a clear engineering roadmap and delivery plan.</li>
+            <li>Hire, mentor and lead the engineering team and set the standards it builds to.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <h3>Founder, CEO &amp; CTO, <span class="org">ScoutVerse.ai</span></h3>
+            <span class="when">2026 – Present</span>
+          </div>
+          <p class="tagline">AI football ecosystem for players, scouts, agents and clubs · <a href="https://scoutverse-frontend.vercel.app/">scoutverse-frontend.vercel.app</a></p>
+          <ul>
+            <li>Founded the company and lead product, technology and go-to-market strategy.</li>
+            <li>Architecting a <strong>dual-brain AI engine</strong>: computer vision turns phone video into physics-verified metrics such as top speed and distance, while a multimodal AI layer assesses tactical awareness and decision-making.</li>
+            <li>Designing visual overlays that draw speed and acceleration onto the clip at the exact moment of each metric, so every rating traces back to the footage.</li>
+            <li>Building web and mobile experiences with intelligent search across player profiles, metrics and clips, plus subscription and pay-per-use billing.</li>
+            <li>Shaping a four-sided marketplace with verified player profiles, talent requests from clubs and collaboration tools for agents.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <span class="status">Open to strategic opportunities</span>
+      <span>Page 1 of 2</span>
+    </footer>
+  </article>
+
+  <article class="sheet" aria-label="Page 2">
+    <div class="grow">
+      <section>
+        <h2>Experience <small>Continued</small></h2>
+        <div class="job">
+          <div class="job-head">
+            <h3>Full-Stack Developer, <span class="org">Felitech</span></h3>
+            <span class="when">2021 – 2025</span>
+          </div>
+          <p class="tagline">Independent practice building websites and web applications</p>
+          <ul>
+            <li>Designed, built and launched websites and web apps for clients and my own products, from brief to deployment.</li>
+            <li>Delivered the corporate website for United Development Company.</li>
+            <li>Shipped a portfolio of live web apps for currency conversion, weather, image search and note-taking, each connected to third-party data services.</li>
+            <li>Designed and built felixabada.com, with motion design, responsive layouts and structured data for search.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu">
+          <div>
+            <h3>Ghana Technology University College</h3>
+            <p>Accra, Ghana</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Selected Work</h2>
+        <div class="work">
+          <div><b>goParkly</b><a href="https://www.goparkly.co">goparkly.co</a><p>Smart parking with live availability and in-app payments.</p></div>
+          <div><b>ScoutVerse.ai</b><a href="https://scoutverse-frontend.vercel.app/">scoutverse-frontend.vercel.app</a><p>AI scouting that turns match video into verified player data.</p></div>
+          <div><b>United Development Company</b><a href="https://united-development-company.vercel.app">united-development-company.vercel.app</a><p>Corporate website, designed and built end to end.</p></div>
+          <div><b>felixabada.com</b><a href="https://www.felixabada.com">felixabada.com</a><p>Personal portfolio and résumé.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Core Competencies</h2>
+        <dl class="caps">
+          <div><dt>Full-stack engineering</dt><dd>Web and mobile apps, APIs and databases, end to end.</dd></div>
+          <div><dt>Platform architecture</dt><dd>Reliable systems designed to grow with the business.</dd></div>
+          <div><dt>Applied AI</dt><dd>Computer vision and multimodal AI in real products.</dd></div>
+          <div><dt>Cloud &amp; reliability</dt><dd>Deployment, monitoring and uptime in production.</dd></div>
+          <div><dt>Payments &amp; marketplaces</dt><dd>In-app payments, subscriptions and multi-sided platforms.</dd></div>
+          <div><dt>Technical leadership</dt><dd>Roadmaps, hiring, mentorship and engineering culture.</dd></div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>How I Lead</h2>
+        <div class="lead">
+          <ul class="principles">
+            <li><b>Scalable by design.</b> Systems that grow with users and markets without a rewrite.</li>
+            <li><b>Platform thinking.</b> Foundations that let ideas become sustainable products.</li>
+            <li><b>Human-centred.</b> Real-world impact on the end user comes first.</li>
+          </ul>
+          <blockquote class="quote">“Platforms are built not just with code, but with culture.”<cite>Leadership philosophy</cite></blockquote>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <span>felixabada.com</span>
+      <span>Page 2 of 2</span>
+    </footer>
+  </article>
+</main>

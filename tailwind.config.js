@@ -1,101 +1,58 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 module.exports = {
   darkMode: 'class',
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
-    container: {
-      padding: '15px',
-      center: true,
-    },
-
     extend: {
       screens: {
-        xs: "320px",
-        sm: "375px",
-        sml: "500px",
-        md: "667px",
-        mdl: "768px",
-        lg: "960px",
-        lgl: "1024px",
-        xl: "1280px",
+        xs: '320px',
+        sm: '375px',
+        sml: '500px',
+        md: '667px',
+        mdl: '768px',
+        lg: '960px',
+        lgl: '1024px',
+        xl: '1280px',
       },
-
       fontFamily: {
-        body: ["Lato", "sans-serif"],
-        titleFont: ["Bodoni Moda", "serif"],
+        body: ['Lato', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        titleFont: ['"Bodoni Moda"', 'Didot', 'Georgia', 'serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
       },
       colors: {
-        // Minimalistic color scheme with dark mode support
-        primary: {
-          DEFAULT: '#000000',
-          light: '#1a1a1a',
-        },
-        accent: {
-          DEFAULT: '#000000',
-          gray: '#666666',
-        },
-        background: {
-          DEFAULT: '#FFFFFF',
-          light: '#FAFAFA',
-          gray: '#F5F5F5',
-          dark: '#0A0A0A',
-          'dark-secondary': '#1A1A1A',
-          'dark-tertiary': '#2A2A2A',
-        },
-        border: {
-          DEFAULT: '#E5E5E5',
-          light: '#F0F0F0',
-          dark: '#D4D4D4',
-          'dark-mode': '#2A2A2A',
-        },
-        text: {
-          primary: '#000000',
-          secondary: '#666666',
-          tertiary: '#999999',
-          light: '#CCCCCC',
-          'dark-primary': '#FFFFFF',
-          'dark-secondary': '#B3B3B3',
-          'dark-tertiary': '#808080',
-        },
+        bg: token('bg'),
+        fg: token('fg'),
+        muted: token('muted'),
+        surface: token('surface'),
+        panel: token('panel'),
+        accent: token('accent'),
+        gold: token('gold'),
+        band: token('band'),
+        'band-fg': token('band-fg'),
+        tint: token('tint'),
       },
-      boxShadow: {
-        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-        'hover': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+      opacity: {
+        15: '0.15',
+        35: '0.35',
+        45: '0.45',
+        55: '0.55',
+        65: '0.65',
+        85: '0.85',
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in',
-        'slide-up': 'slideUp 0.5s ease-out',
+      spacing: {
+        gutter: 'var(--gutter)',
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+      transitionTimingFunction: {
+        expo: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'in-out-quart': 'cubic-bezier(0.76, 0, 0.24, 1)',
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar'),
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.minimal-card': {
-          'background': '#FFFFFF',
-          'border': '1px solid #E5E5E5',
-          'transition': 'all 0.2s ease',
-        },
-        '.minimal-card:hover': {
-          'box-shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-        },
-      }
-      addUtilities(newUtilities)
-    }
-  ],
-}
-
+  plugins: [],
+};

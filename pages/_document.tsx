@@ -1,12 +1,16 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document';
+
+// Applies the saved (or system) theme before first paint so there is no flash.
+const themeInit = `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         {/* Meta Tags */}
         <meta name="description" content="Felix Abada — Software Engineer & CTO at goParkly.co based in Ghana. Building scalable tech platforms that transform urban mobility and drive innovation." />
-        <meta name="keywords" content="Felix Abada, Software Engineer Ghana, Tech Executive, CTO goParkly, Co-Founder, Web Developer, Full Stack Developer, Accra Ghana, PropTech, Urban Mobility, Platform Architecture, Tech Leadership, goParkly.co, African Tech Leader" />
+        <meta name="keywords" content="Felix Abada, Software Engineer Ghana, Tech Executive, CTO goParkly, ScoutVerse.ai, Co-Founder, Web Developer, Full Stack Developer, Accra Ghana, PropTech, SportsTech, Urban Mobility, Platform Architecture, Tech Leadership, goParkly.co, African Tech Leader" />
         <meta name="author" content="Felix Abada" />
 
         {/* Favicon - Multiple sizes for better browser and search engine support */}
@@ -18,41 +22,31 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-        {/* Safari Pinned Tab */}
         <link rel="mask-icon" href="/favicon.svg" color="#000000" />
-
-        {/* Apple Touch Icons */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-        {/* Shortcut icon for browsers */}
         <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* Apple Web App */}
         <meta name="apple-mobile-web-app-title" content="Felix Abada" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-        {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
 
-        {/* Theme Color - Multiple for different contexts */}
-        <meta name="theme-color" content="#000000" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+        {/* Theme Color */}
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#060606" />
 
         {/* Microsoft Tiles */}
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/android-chrome-512x512.png" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
-        {/* Additional SEO for browser search */}
         <meta name="application-name" content="Felix Abada Portfolio" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
 
-        {/* Open Graph Meta Tags for Social Media */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.felixabada.com" />
         <meta property="og:site_name" content="Felix Abada" />
@@ -64,7 +58,7 @@ export default function Document() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Felix Abada - Software Engineer and CTO" />
 
-        {/* Twitter Card Meta Tags */}
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.felixabada.com" />
         <meta name="twitter:title" content="Felix Abada — Software Engineer | Tech Executive | CTO" />
@@ -72,42 +66,44 @@ export default function Document() {
         <meta name="twitter:image" content="https://www.felixabada.com/assets/Images/felix_google.png" />
         <meta name="twitter:image:alt" content="Felix Abada - Software Engineer and CTO" />
 
-        {/* Google Search Logo - Organization Schema */}
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Felix Abada",
-              "alternateName": "Felix Abada Portfolio",
-              "url": "https://www.felixabada.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.felixabada.com/android-chrome-512x512.png",
-                "width": 512,
-                "height": 512
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Felix Abada',
+              alternateName: 'Felix Abada Portfolio',
+              url: 'https://www.felixabada.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.felixabada.com/android-chrome-512x512.png',
+                width: 512,
+                height: 512,
               },
-              "image": "https://www.felixabada.com/assets/Images/felix_google.png",
-              "sameAs": [
-                "https://gh.linkedin.com/in/felix-abada-11707a1aa",
-                "https://www.facebook.com/felix.abada.52/",
-                "https://www.instagram.com/nii.devs/",
-                "https://wa.me/233508591078"
+              image: 'https://www.felixabada.com/assets/Images/felix_google.png',
+              sameAs: [
+                'https://gh.linkedin.com/in/felix-abada-11707a1aa',
+                'https://www.instagram.com/nii.devs/',
+                'https://wa.me/233508591078',
               ],
-              "founder": {
-                "@type": "Person",
-                "name": "Felix Abada",
-                "jobTitle": "CTO & Co-Founder",
-                "image": "https://www.felixabada.com/assets/Images/felix_google.png"
-              }
-            })
+              founder: {
+                '@type': 'Person',
+                name: 'Felix Abada',
+                jobTitle: 'CTO & Co-Founder',
+                image: 'https://www.felixabada.com/assets/Images/felix_google.png',
+              },
+            }),
           }}
         />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=IBM+Plex+Mono:wght@400;500&family=Lato:wght@300;400;700;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />
@@ -115,4 +111,4 @@ export default function Document() {
       </body>
     </Html>
   );
-};
+}
