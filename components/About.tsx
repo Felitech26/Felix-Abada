@@ -29,7 +29,7 @@ export default function About() {
               data-cursor="Hello"
             >
               <motion.div className="absolute inset-[-8%]" style={{ y: imgY }}>
-                <Image src={felixPortrait} alt="Portrait of Felix Abada" fill sizes="(max-width: 1024px) 90vw, 30vw" className="object-cover object-top" />
+                <Image src={felixPortrait} alt="Felix Abada, software engineer and CTO based in Accra, Ghana" fill sizes="(max-width: 1024px) 90vw, 30vw" className="object-cover object-top" />
               </motion.div>
               <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-gradient-to-t from-black/75 to-transparent p-5 pt-16 font-mono text-[10px] uppercase tracking-[0.2em] text-white">
                 <span className="relative flex h-2 w-2">

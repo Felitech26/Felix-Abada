@@ -9,8 +9,13 @@ export default function Document() {
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         {/* Meta Tags */}
-        <meta name="description" content="Felix Abada — Software Engineer & CTO at goParkly.co based in Ghana. Building scalable tech platforms that transform urban mobility and drive innovation." />
-        <meta name="keywords" content="Felix Abada, Software Engineer Ghana, Tech Executive, CTO goParkly, ScoutVerse.ai, Co-Founder, Web Developer, Full Stack Developer, Accra Ghana, PropTech, SportsTech, Urban Mobility, Platform Architecture, Tech Leadership, goParkly.co, African Tech Leader" />
+        
+        <meta name="keywords" content="Felix Abada, software engineer Ghana, software developer Ghana, software engineer Accra, full-stack developer Ghana, software developer Africa, CTO Ghana, tech executive Africa, goParkly, ScoutVerse.ai" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <meta name="geo.region" content="GH-AA" />
+        <meta name="geo.placename" content="Accra" />
+        <meta name="geo.position" content="5.6037;-0.1870" />
+        <meta name="ICBM" content="5.6037, -0.1870" />
         <meta name="author" content="Felix Abada" />
 
         {/* Favicon - Multiple sizes for better browser and search engine support */}
@@ -50,53 +55,22 @@ export default function Document() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.felixabada.com" />
         <meta property="og:site_name" content="Felix Abada" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:title" content="Felix Abada — Software Engineer | Tech Executive | CTO" />
-        <meta property="og:description" content="Tech Executive & CTO at goParkly.co. Building scalable tech platforms that transform urban mobility. Based in Accra, Ghana." />
-        <meta property="og:image" content="https://www.felixabada.com/assets/Images/felix_google.png" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:title" content="Felix Abada — Software Engineer & CTO in Accra, Ghana" />
+        <meta property="og:description" content="Software engineer, full-stack developer and CTO based in Accra, Ghana. Co-Founder of goParkly and Founder of ScoutVerse.ai." />
+        <meta property="og:image" content="https://www.felixabada.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Felix Abada - Software Engineer and CTO" />
+        <meta property="og:image:alt" content="Felix Abada, software engineer and CTO in Accra, Ghana" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.felixabada.com" />
-        <meta name="twitter:title" content="Felix Abada — Software Engineer | Tech Executive | CTO" />
-        <meta name="twitter:description" content="Tech Executive & CTO at goParkly.co. Building scalable tech platforms that transform urban mobility. Based in Accra, Ghana." />
-        <meta name="twitter:image" content="https://www.felixabada.com/assets/Images/felix_google.png" />
-        <meta name="twitter:image:alt" content="Felix Abada - Software Engineer and CTO" />
+        <meta name="twitter:title" content="Felix Abada — Software Engineer & CTO in Accra, Ghana" />
+        <meta name="twitter:description" content="Software engineer, full-stack developer and CTO based in Accra, Ghana. Co-Founder of goParkly and Founder of ScoutVerse.ai." />
+        <meta name="twitter:image" content="https://www.felixabada.com/og-image.png" />
+        <meta name="twitter:image:alt" content="Felix Abada, software engineer and CTO in Accra, Ghana" />
 
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Felix Abada',
-              alternateName: 'Felix Abada Portfolio',
-              url: 'https://www.felixabada.com',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.felixabada.com/android-chrome-512x512.png',
-                width: 512,
-                height: 512,
-              },
-              image: 'https://www.felixabada.com/assets/Images/felix_google.png',
-              sameAs: [
-                'https://gh.linkedin.com/in/felix-abada-11707a1aa',
-                'https://www.instagram.com/nii.devs/',
-                'https://wa.me/233508591078',
-              ],
-              founder: {
-                '@type': 'Person',
-                name: 'Felix Abada',
-                jobTitle: 'CTO & Co-Founder',
-                image: 'https://www.felixabada.com/assets/Images/felix_google.png',
-              },
-            }),
-          }}
-        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

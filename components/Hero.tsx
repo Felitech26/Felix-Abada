@@ -32,13 +32,13 @@ export default function Hero({ ready }: { ready: boolean }) {
       />
 
       <motion.div style={{ y, opacity: fade }} className="wrap on-world relative flex flex-1 flex-col items-center justify-center text-center">
-        <motion.p {...enter(0.1)} className="eyebrow flex items-center gap-3 text-[10px] md:gap-4 md:text-[11px]">
+        <motion.h1 {...enter(0.1)} className="eyebrow flex items-center gap-3 text-[10px] md:gap-4 md:text-[11px]">
           <span className="hidden h-px w-8 bg-fg md:block" aria-hidden="true" />
-          <Scramble text="Software Engineer · Tech Executive · CTO" play={ready} duration={900} />
+          <Scramble text="Felix Abada · Software Engineer & CTO · Accra, Ghana" play={ready} duration={1000} />
           <span className="hidden h-px w-8 bg-fg md:block" aria-hidden="true" />
-        </motion.p>
+        </motion.h1>
 
-        <motion.h1 style={{ letterSpacing: spread }} className="mt-7 font-titleFont text-[length:clamp(2.4rem,min(8.4vw,6.4vw+1rem,11.5vh),6.25rem)] leading-[1]">
+        <motion.p style={{ letterSpacing: spread }} className="mt-7 font-titleFont text-[length:clamp(2.4rem,min(8.4vw,6.4vw+1rem,11.5vh),6.25rem)] leading-[1]">
           {lines.map((l, i) => (
             <span key={l.text} className="block overflow-hidden pb-[0.1em]">
               <motion.span
@@ -52,7 +52,7 @@ export default function Hero({ ready }: { ready: boolean }) {
               </motion.span>
             </span>
           ))}
-        </motion.h1>
+        </motion.p>
 
       </motion.div>
 

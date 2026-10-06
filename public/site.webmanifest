@@ -1,11 +1,11 @@
 {
-  "name": "Felix Abada - Portfolio",
+  "name": "Felix Abada — Software Engineer & CTO",
   "short_name": "Felix Abada",
-  "description": "Felix Abada - Tech Executive Based in Ghana, leading engineering innovation at goParkly.co",
+  "description": "Felix Abada, software engineer, full-stack developer and CTO based in Accra, Ghana.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#fafafa",
+  "theme_color": "#0c0c0c",
   "icons": [
     {
       "src": "/favicon.ico",
