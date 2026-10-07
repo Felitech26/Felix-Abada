@@ -50,7 +50,7 @@ export default function About() {
             />
             <Words
               delay={0.2}
-              text="Felix Abada is a visionary Tech Executive and CTO with a mission to build scalable, resilient, and impactful platforms that empower communities and businesses across Africa and beyond. With a leadership style rooted in clarity, innovation, and mentorship, Felix bridges local ingenuity with global standards, transforming ideas into systems that endure, inspire, and scale."
+              text="Felix Abada is a software engineer, full-stack developer and CTO based in Accra, Ghana, on a mission to build scalable, resilient, and impactful platforms that empower communities and businesses across Africa and beyond. With a leadership style rooted in clarity, innovation, and mentorship, Felix bridges local ingenuity with global standards, transforming ideas into systems that endure, inspire, and scale."
             />
             <Words
               delay={0.3}

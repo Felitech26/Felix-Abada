@@ -5,23 +5,11 @@ import { logo1, logo2 } from '@/public/assets';
 import Scramble from './Scramble';
 import ThemeToggle from './ThemeToggle';
 import ThemeSwitch from './ThemeSwitch';
-import { SoundToggle } from './Sound';
 import { navLinks, socials, EMAIL } from './content';
+import useLocalClock from '@/hooks/useLocalClock';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const wipe = [0.76, 0, 0.24, 1] as const;
-
-function useAccraTime() {
-  const [time, setTime] = useState('');
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Accra' });
-    const tick = () => setTime(fmt.format(new Date()));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return time;
-}
 
 function MenuLink({ index, label, note, href, onClick, open }: { index: number; label: string; note: string; href: string; onClick: () => void; open: boolean }) {
   const [hover, setHover] = useState(false);
@@ -60,8 +48,7 @@ function MenuLink({ index, label, note, href, onClick, open }: { index: number; 
 
 export default function Navbar({ ready }: { ready: boolean }) {
   const [open, setOpen] = useState(false);
-  const [hover, setHover] = useState(false);
-  const time = useAccraTime();
+  const { time, place } = useLocalClock(true);
 
   useEffect(() => {
     if (open) window.lenis?.stop();
@@ -88,20 +75,15 @@ export default function Navbar({ ready }: { ready: boolean }) {
           </a>
 
           <div className="flex items-stretch gap-2">
-          {!open && <SoundToggle />}
           {!open && <ThemeSwitch />}
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            onPointerEnter={() => setHover(true)}
-            onPointerLeave={() => setHover(false)}
             aria-expanded={open}
             aria-controls="site-menu"
-            className="group pointer-events-auto relative flex items-center gap-4 border border-fg/20 bg-bg/60 py-2.5 pl-4 pr-3 backdrop-blur-md transition-colors duration-500 hover:border-fg"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            className="group pointer-events-auto relative flex items-center border border-fg/20 bg-bg/60 px-3 py-2.5 backdrop-blur-md transition-colors duration-500 hover:border-fg"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.24em]">
-              <Scramble text={open ? 'Close' : 'Menu'} play={hover || open} duration={400} />
-            </span>
             <span className="relative block h-3 w-6" aria-hidden="true">
               <motion.span className="absolute left-0 top-0 h-px w-full bg-fg" animate={open ? { y: 6, rotate: 45 } : { y: 0, rotate: 0 }} transition={{ duration: 0.5, ease }} />
               <motion.span className="absolute bottom-0 right-0 h-px bg-fg" animate={open ? { y: -5, rotate: -45, width: '100%' } : { y: 0, rotate: 0, width: '60%' }} transition={{ duration: 0.5, ease }} />
@@ -169,15 +151,9 @@ export default function Navbar({ ready }: { ready: boolean }) {
                       Open to strategic opportunities
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="grid gap-2">
-                      <span className="text-fg/50">Local time</span>
-                      <span className="tabular-nums">Accra {time}</span>
-                    </div>
-                    <div className="grid gap-2">
-                      <span className="text-fg/50">Position</span>
-                      <span>5.60°N 0.19°W</span>
-                    </div>
+                  <div className="grid gap-2">
+                    <span className="text-fg/50">Local time</span>
+                    <span className="tabular-nums">{place} {time}</span>
                   </div>
                   <div className="grid gap-2">
                     <span className="text-fg/50">Write</span>

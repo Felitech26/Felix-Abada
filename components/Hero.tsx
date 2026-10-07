@@ -59,8 +59,8 @@ export default function Hero({ ready }: { ready: boolean }) {
       <div className="wrap on-world relative mt-10 md:mt-12">
         <div className="grid items-end gap-8 border-t border-fg/15 pt-6 lg:grid-cols-12 lg:gap-12">
         <motion.p {...enter(0.85)} className="max-w-md text-[15px] leading-relaxed text-fg/70 lg:col-span-5">
-          I am Felix Abada. A Tech Executive and Strategic Leader based in Ghana, bridging the gap between complex engineering and scalable
-          business impact. Currently defining the future of urban mobility at{' '}
+          I am Felix Abada, a software engineer and tech executive based in Accra, Ghana, bridging the gap between complex engineering and
+          scalable business impact. Currently defining the future of urban mobility at{' '}
           <a href="https://www.goparkly.co" target="_blank" rel="noopener noreferrer" className="text-fg underline decoration-fg/30 underline-offset-4 transition-colors hover:decoration-fg">
             goParkly.co
           </a>{' '}

@@ -8,9 +8,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        {/* Meta Tags */}
-        
-        <meta name="keywords" content="Felix Abada, software engineer Ghana, software developer Ghana, software engineer Accra, full-stack developer Ghana, software developer Africa, CTO Ghana, tech executive Africa, goParkly, ScoutVerse.ai" />
+        {/* Title, description, canonical, Open Graph and structured data live in pages/index.tsx, fed from components/seo.ts */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <meta name="geo.region" content="GH-AA" />
         <meta name="geo.placename" content="Accra" />
@@ -50,27 +48,6 @@ export default function Document() {
         <meta name="application-name" content="Felix Abada Portfolio" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.felixabada.com" />
-        <meta property="og:site_name" content="Felix Abada" />
-        <meta property="og:locale" content="en_GB" />
-        <meta property="og:title" content="Felix Abada — Software Engineer & CTO in Accra, Ghana" />
-        <meta property="og:description" content="Software engineer, full-stack developer and CTO based in Accra, Ghana. Co-Founder of goParkly and Founder of ScoutVerse.ai." />
-        <meta property="og:image" content="https://www.felixabada.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Felix Abada, software engineer and CTO in Accra, Ghana" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.felixabada.com" />
-        <meta name="twitter:title" content="Felix Abada — Software Engineer & CTO in Accra, Ghana" />
-        <meta name="twitter:description" content="Software engineer, full-stack developer and CTO based in Accra, Ghana. Co-Founder of goParkly and Founder of ScoutVerse.ai." />
-        <meta name="twitter:image" content="https://www.felixabada.com/og-image.png" />
-        <meta name="twitter:image:alt" content="Felix Abada, software engineer and CTO in Accra, Ghana" />
-
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

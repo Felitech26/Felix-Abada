@@ -1,23 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Panel, { Heading, Words, Rise } from './Panel';
+import Panel, { Heading, Words, Rise, ArrowUpRight } from './Panel';
 import Magnetic from './Magnetic';
+import useLocalClock from '@/hooks/useLocalClock';
 import { EMAIL, PHONE_DISPLAY, WHATSAPP, socials, contactTopics } from './content';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const MAX = 1000;
-
-function useAccraClock() {
-  const [time, setTime] = useState('');
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Accra' });
-    const tick = () => setTime(fmt.format(new Date()));
-    tick();
-    const id = setInterval(tick, 20000);
-    return () => clearInterval(id);
-  }, []);
-  return time;
-}
 
 /** Underlined input that sits inside the sentence. */
 function Blank({ id, name, placeholder, type = 'text', required = false, width, autoComplete }: { id: string; name: string; placeholder: string; type?: string; required?: boolean; width: string; autoComplete?: string }) {
@@ -51,14 +40,14 @@ function Channel({ label, value, href, external = true }: { label: string; value
         <span className="mt-1 block truncate text-base">{value}</span>
       </span>
       <span aria-hidden="true" className="shrink-0 transition-transform duration-500 ease-expo group-hover:rotate-45">
-        ↗
+        <ArrowUpRight />
       </span>
     </a>
   );
 }
 
 export default function Contact() {
-  const time = useAccraClock();
+  const { time, place } = useLocalClock();
   const [topic, setTopic] = useState(contactTopics[0]);
   const [sent, setSent] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -209,7 +198,7 @@ export default function Contact() {
             <div className="mt-10 grid grid-cols-2 gap-6 border-t border-fg/10 pt-6 font-mono text-[11px] uppercase tracking-[0.18em]">
               <div className="grid gap-2">
                 <span className="text-muted">Local time</span>
-                <span className="tabular-nums">Accra {time}</span>
+                <span className="tabular-nums">{place} {time}</span>
               </div>
               <div className="grid gap-2">
                 <span className="text-muted">Status</span>

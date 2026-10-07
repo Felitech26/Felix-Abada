@@ -162,3 +162,12 @@ export function Check() {
     </svg>
   );
 }
+
+/** Up-right arrow drawn as SVG: the ↗ character turns into a colour emoji on phones. */
+export function ArrowUpRight({ className = 'h-[0.8em] w-[0.8em]' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" className={`inline-block shrink-0 ${className}`} fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M4 12L12 4M5.5 4H12v6.5" strokeLinecap="square" />
+    </svg>
+  );
+}

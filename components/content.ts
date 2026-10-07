@@ -78,7 +78,7 @@ export const ventures: Venture[] = [
     id: 'goparkly',
     scene: 0.38,
     name: 'goParkly',
-    meta: 'Accra · Urban mobility',
+    meta: 'Global · Urban mobility',
     role: 'CTO & Co-Founder · 2025 — Present',
     summary:
       'Revolutionizing urban mobility globally. A smart parking platform engineered to bridge the gap between drivers and spaces through real-time data, AI architecture and seamless payments.',
@@ -133,15 +133,15 @@ export const pillars = [
  * within a few degrees of each other, so they are fanned out to stay legible.
  * Distances are exact.
  */
-export const cities: { name: string; tz: string; km: number; bearing: number; shown: number; side: 'l' | 'r' | 't'; dy?: number }[] = [
-  { name: 'Lisbon', tz: 'Europe/Lisbon', km: 3791, bearing: 347, shown: 318, side: 'l', dy: 14 },
-  { name: 'Madrid', tz: 'Europe/Madrid', km: 3887, bearing: 355, shown: 338, side: 'l', dy: -4 },
-  { name: 'Barcelona', tz: 'Europe/Madrid', km: 3986, bearing: 3, shown: 18, side: 'r' },
-  { name: 'London', tz: 'Europe/London', km: 5104, bearing: 0, shown: 0, side: 't' },
-  { name: 'Rio de Janeiro', tz: 'America/Sao_Paulo', km: 5644, bearing: 234, shown: 234, side: 'l' },
-  { name: 'Dubai', tz: 'Asia/Dubai', km: 6281, bearing: 63, shown: 63, side: 'r' },
-  { name: 'New York', tz: 'America/New_York', km: 8240, bearing: 311, shown: 311, side: 'l' },
-  { name: 'Tokyo', tz: 'Asia/Tokyo', km: 13801, bearing: 39, shown: 39, side: 'r' },
+export const cities: { name: string; km: number; bearing: number; shown: number; side: 'l' | 'r' | 't'; dy?: number }[] = [
+  { name: 'Lisbon', km: 3791, bearing: 347, shown: 318, side: 'l', dy: 14 },
+  { name: 'Madrid', km: 3887, bearing: 355, shown: 338, side: 'l', dy: -4 },
+  { name: 'Barcelona', km: 3986, bearing: 3, shown: 18, side: 'r' },
+  { name: 'London', km: 5104, bearing: 0, shown: 0, side: 't' },
+  { name: 'Rio de Janeiro', km: 5644, bearing: 234, shown: 234, side: 'l' },
+  { name: 'Dubai', km: 6281, bearing: 63, shown: 63, side: 'r' },
+  { name: 'New York', km: 8240, bearing: 311, shown: 311, side: 'l' },
+  { name: 'Tokyo', km: 13801, bearing: 39, shown: 39, side: 'r' },
 ];
 
 export const contactTopics = ['Partnership', 'Investment', 'Advisory', 'Leadership role', 'Something else'];

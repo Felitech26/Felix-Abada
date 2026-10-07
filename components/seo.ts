@@ -6,31 +6,45 @@
 
 export const SITE = 'https://www.felixabada.com';
 
-export const TITLE = 'Felix Abada — Software Engineer & CTO in Accra, Ghana';
+// The page's main search phrase is "software engineer in Ghana"; it leads the title, the H1 and the first paragraph.
+export const TITLE = 'Felix Abada | Software Engineer in Accra, Ghana';
 export const DESCRIPTION =
-  'Felix Abada is a software engineer, full-stack developer and CTO based in Accra, Ghana, building scalable platforms and applied AI products for Africa and the world.';
+  'Felix Abada is a software engineer and full-stack developer in Accra, Ghana. CTO of goParkly and founder of ScoutVerse.ai, building web, mobile and AI platforms.';
+export const SHARE_TITLE = 'Felix Abada — Software Engineer & CTO in Accra, Ghana';
+export const SHARE_DESCRIPTION =
+  'Software engineer, full-stack developer and CTO based in Accra, Ghana. Co-Founder of goParkly and Founder of ScoutVerse.ai.';
 export const OG_IMAGE = `${SITE}/og-image.png`;
+export const OG_IMAGE_ALT = 'Felix Abada, software engineer and CTO in Accra, Ghana';
+export const UPDATED = '2026-10-07';
 
 export const faqs = [
   {
-    q: 'Who is Felix Abada?',
-    a: 'Felix Abada is a software engineer and technology executive based in Accra, Ghana. He is the Co-Founder and CTO of goParkly, a smart parking platform, and the Founder and CEO of ScoutVerse.ai, an AI-powered football scouting platform.',
+    q: 'Looking to hire a software engineer in Ghana?',
+    a: 'Felix Abada is a software engineer and full-stack developer based in Accra, Ghana, open to strategic engagements with teams in Ghana, across Africa and internationally. He leads builds end to end: architecture, web and mobile development, payments, applied AI and the engineering team that runs it.',
   },
   {
-    q: 'What does Felix Abada do as a software engineer?',
-    a: 'He designs and builds web and mobile platforms end to end: full-stack software engineering, platform architecture, real-time systems, payments and applied AI. As a CTO he also sets technical strategy, builds engineering teams and leads products from first idea to launch and scale.',
+    q: 'What kind of work does Felix take on?',
+    a: 'Three kinds. Technology leadership: strategy, roadmaps and engineering teams aligned with the business. Platform engineering: web and mobile products built end to end, with real-time data and payments. Applied AI: computer vision, multimodal reasoning and intelligent search that solve a real problem rather than decorate one.',
   },
   {
-    q: 'Does Felix work with companies in Ghana and across Africa?',
-    a: 'Yes. Felix is based in Accra on Greenwich Mean Time and works with founders, companies and investors in Ghana, across Africa and internationally, on partnerships, advisory and technology leadership.',
+    q: 'How does an engagement work?',
+    a: 'It depends on what the work needs: a technical partnership, an advisory role, a leadership role inside the team, or investment conversations. Every engagement starts with the problem and the people it serves, and the technology follows from there.',
   },
   {
-    q: 'What has Felix Abada built?',
-    a: 'goParkly, a platform that lets drivers find and book parking in real time with in-app payments, running at 99.9% uptime. And ScoutVerse.ai, a football ecosystem whose dual-brain AI turns ordinary phone video into physics-verified player analytics.',
+    q: 'What has been built and shipped?',
+    a: 'goParkly, a smart parking platform where drivers find and book a space in real time and pay in the app, running in production at 99.9% uptime. And ScoutVerse.ai, a football ecosystem whose dual-brain AI turns ordinary phone video into physics-verified player analytics for players, scouts, agents and clubs.',
   },
   {
-    q: 'How can I contact Felix Abada?',
-    a: 'Email hello@felixabada.com, message him on WhatsApp at +233 50 859 1078, or use the contact form on this page.',
+    q: 'How is the work built to scale?',
+    a: 'Standards are set early. Architecture, quality and security are decided before the first line of code, systems are designed to grow with users and markets, and the teams who build them own the outcome. That is how goParkly holds 99.9% uptime.',
+  },
+  {
+    q: 'Does Felix work with teams outside Ghana?',
+    a: 'Yes. The work is run from Accra with founders, companies and investors across Africa, Europe, the Middle East, Asia and the Americas, remotely or in person.',
+  },
+  {
+    q: 'How do we start a project together?',
+    a: 'Email hello@felixabada.com or send a WhatsApp message to +233 50 859 1078 with a short note on what you are building, or use the contact form on this page.',
   },
 ];
 
@@ -47,6 +61,9 @@ const person = {
   telephone: '+233508591078',
   jobTitle: ['Software Engineer', 'Chief Technology Officer', 'Full-Stack Developer'],
   description: DESCRIPTION,
+  mainEntityOfPage: { '@id': `${SITE}/#page` },
+  knowsLanguage: 'en',
+  workLocation: { '@type': 'Place', name: 'Accra, Ghana', address: { '@type': 'PostalAddress', addressLocality: 'Accra', addressCountry: 'GH' } },
   worksFor: [
     { '@type': 'Organization', name: 'goParkly', url: 'https://www.goparkly.co' },
     { '@type': 'Organization', name: 'ScoutVerse.ai', url: 'https://scoutverse-frontend.vercel.app/' },
@@ -97,7 +114,7 @@ export const structuredData = {
       name: TITLE,
       description: DESCRIPTION,
       inLanguage: 'en',
-      dateModified: '2026-10-06',
+      dateModified: UPDATED,
       isPartOf: { '@id': `${SITE}/#website` },
       mainEntity: { '@id': `${SITE}/#felix` },
       primaryImageOfPage: OG_IMAGE,
@@ -116,6 +133,7 @@ export const structuredData = {
       '@type': 'ProfessionalService',
       '@id': `${SITE}/#services`,
       name: 'Felix Abada — Software Engineering & Technology Leadership',
+      description: 'Software engineering, full-stack web and mobile development, platform architecture, applied AI and technical leadership from Accra, Ghana.',
       url: SITE,
       image: OG_IMAGE,
       email: 'hello@felixabada.com',
@@ -124,6 +142,7 @@ export const structuredData = {
       address: { '@type': 'PostalAddress', addressLocality: 'Accra', addressRegion: 'Greater Accra', addressCountry: 'GH' },
       geo: { '@type': 'GeoCoordinates', latitude: 5.6037, longitude: -0.187 },
       areaServed: [
+        { '@type': 'City', name: 'Accra' },
         { '@type': 'Country', name: 'Ghana' },
         { '@type': 'Place', name: 'Africa' },
         { '@type': 'Place', name: 'Worldwide' },

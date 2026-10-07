@@ -312,9 +312,3 @@ html.is-loading body {
   stroke-width: 4px;
   stroke-linejoin: round;
 }
-
-/* sound toggle waves */
-@keyframes wave {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
-}

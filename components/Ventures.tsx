@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Panel, { Heading, Check, Words, Rise } from './Panel';
+import Panel, { Heading, Check, Words, Rise, ArrowUpRight } from './Panel';
 import { ParkingScene, FootballScene } from './VentureScenes';
 import { ventures, Venture } from './content';
 
@@ -57,7 +57,7 @@ function Case({ v, index }: { v: Venture; index: number }) {
               rel="noopener noreferrer"
               className="whitespace-nowrap px-2 py-1 transition-colors duration-300 hover:bg-fg hover:text-bg"
             >
-              {v.url} ↗
+              {v.url} <ArrowUpRight />
             </a>
         </div>
         <div className={`relative w-full overflow-hidden ${v.id === 'goparkly' ? 'aspect-square' : 'aspect-[4/3]'} md:aspect-[16/9] lg:aspect-[21/9]`}>
@@ -94,7 +94,7 @@ function Case({ v, index }: { v: Venture; index: number }) {
           <a href={v.link} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-4">
             <span className="link-line pb-1 font-mono text-[11px] uppercase tracking-[0.22em]">Visit {v.name}</span>
             <span className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/30 transition-all duration-500 ease-expo group-hover:rotate-45 group-hover:border-fg group-hover:bg-fg group-hover:text-bg">
-              ↗
+              <ArrowUpRight className="h-4 w-4" />
             </span>
           </a>
         </Rise>

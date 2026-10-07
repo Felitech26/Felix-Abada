@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Scramble from './Scramble';
+import useLocalClock from '@/hooks/useLocalClock';
 
 interface Chapter {
   label: string;
@@ -16,17 +17,9 @@ export default function HUD({ ready }: { ready: boolean }) {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [active, setActive] = useState(0);
   const [pct, setPct] = useState(0);
-  const [time, setTime] = useState('');
+  const { time, place, zone } = useLocalClock(true);
   const { scrollYProgress } = useScroll();
   const rail = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
-
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Accra' });
-    const tick = () => setTime(fmt.format(new Date()));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     let list: Chapter[] = [];
@@ -84,10 +77,9 @@ export default function HUD({ ready }: { ready: boolean }) {
           </span>
         ))}
 
-        {/* bottom-left: position and clock */}
-        <div className="absolute bottom-6 left-gutter hidden gap-1 md:grid">
-          <span>5.6037° N · 0.1870° W</span>
-          <span className="tabular-nums text-fg/40">Accra {time} GMT</span>
+        {/* bottom-left: the visitor's clock */}
+        <div className="absolute bottom-6 left-gutter hidden md:block">
+          <span className="tabular-nums">{place} {time} {zone}</span>
         </div>
 
         {/* bottom-right: chapter readout */}

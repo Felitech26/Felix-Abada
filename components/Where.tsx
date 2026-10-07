@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Panel, { Heading, Words } from './Panel';
 import { cities } from './content';
@@ -8,24 +7,10 @@ const CY = 196; // map centre, y (cities sit mostly north and east of Accra)
 const R = 176; // radius of the 14,000 km ring
 const rOf = (km: number) => R * Math.pow(km / 14000, 0.62);
 
-function useClock(tz: string) {
-  const [time, setTime] = useState('');
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz });
-    const tick = () => setTime(fmt.format(new Date()));
-    tick();
-    const id = setInterval(tick, 20000);
-    return () => clearInterval(id);
-  }, [tz]);
-  return time;
-}
-
-function CityChip({ name, tz }: { name: string; tz: string }) {
-  const time = useClock(tz);
+function CityChip({ name }: { name: string }) {
   return (
-    <span className="group inline-flex items-center gap-2.5 border border-fg/15 bg-panel/70 px-3.5 py-2 font-mono text-[11px] tracking-[0.08em] backdrop-blur-md transition-colors duration-300 hover:border-fg">
+    <span className="inline-flex items-center border border-fg/15 bg-panel/70 px-3.5 py-2 font-mono text-[11px] tracking-[0.08em] backdrop-blur-md transition-colors duration-300 hover:border-fg">
       {name}
-      <span className="tabular-nums text-fg/60 transition-transform duration-300 group-hover:-translate-y-px">{time}</span>
     </span>
   );
 }
@@ -112,14 +97,14 @@ export default function Where() {
         <div className="on-world flex flex-col gap-8 lg:col-span-6">
           <Words
             className="text-[15px] leading-relaxed text-fg/75 md:text-base"
-            text="Rooted in Accra, on Greenwich Mean Time all year round. The working day lines up with London and Lisbon, runs an hour or two behind Madrid and Barcelona, meets Dubai’s afternoon and Tokyo’s evening, and shares its own afternoon with the morning in Rio and New York."
+            text="Based in Accra, building for the world. I partner with founders, companies and investors across Africa, Europe, the Middle East, Asia and the Americas, and the platforms I lead are engineered to scale far beyond the city they started in."
           />
           <div>
-            <p className="eyebrow mb-4">Local time, right now</p>
+            <p className="eyebrow mb-4">Working across</p>
             <div className="flex flex-wrap gap-2.5">
-              <CityChip name="Accra" tz="Africa/Accra" />
+              <CityChip name="Accra" />
               {cities.map((c) => (
-                <CityChip key={c.name} name={c.name} tz={c.tz} />
+                <CityChip key={c.name} name={c.name} />
               ))}
             </div>
           </div>

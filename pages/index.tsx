@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SITE, TITLE, DESCRIPTION, structuredData } from "@/components/seo";
+import { SITE, TITLE, DESCRIPTION, SHARE_TITLE, SHARE_DESCRIPTION, OG_IMAGE, OG_IMAGE_ALT, structuredData } from "@/components/seo";
 import FAQ from "@/components/FAQ";
 import Head from "next/head";
 import Field from "@/components/Field";
@@ -23,7 +23,28 @@ export default function Home() {
       <Head>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={SITE} />
+        <link rel="canonical" href={`${SITE}/`} />
+
+        <meta property="og:type" content="profile" />
+        <meta property="profile:first_name" content="Felix" />
+        <meta property="profile:last_name" content="Abada" />
+        <meta property="og:url" content={`${SITE}/`} />
+        <meta property="og:site_name" content="Felix Abada" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:title" content={SHARE_TITLE} />
+        <meta property="og:description" content={SHARE_DESCRIPTION} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={OG_IMAGE_ALT} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={SHARE_TITLE} />
+        <meta name="twitter:description" content={SHARE_DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="twitter:image:alt" content={OG_IMAGE_ALT} />
+
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
