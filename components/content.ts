@@ -108,7 +108,7 @@ export const ventures: Venture[] = [
       'Verified profiles for players, scouts, agents and clubs',
     ],
     chips: ['SportsTech', 'Computer vision', 'AI'],
-    link: 'https://scoutverse-frontend.vercel.app/',
+    link: 'https://www.scoutverse.ai/',
     url: 'scoutverse.ai',
   },
 ];

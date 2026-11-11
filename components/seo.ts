@@ -66,7 +66,7 @@ const person = {
   workLocation: { '@type': 'Place', name: 'Accra, Ghana', address: { '@type': 'PostalAddress', addressLocality: 'Accra', addressCountry: 'GH' } },
   worksFor: [
     { '@type': 'Organization', name: 'goParkly', url: 'https://www.goparkly.co' },
-    { '@type': 'Organization', name: 'ScoutVerse.ai', url: 'https://scoutverse-frontend.vercel.app/' },
+    { '@type': 'Organization', name: 'ScoutVerse.ai', url: 'https://www.scoutverse.ai/' },
   ],
   hasOccupation: [
     {

@@ -65,7 +65,7 @@ export default function Hero({ ready }: { ready: boolean }) {
             goParkly.co
           </a>{' '}
           and reshaping football scouting through AI at{' '}
-          <a href="https://scoutverse-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg underline decoration-fg/30 underline-offset-4 transition-colors hover:decoration-fg">
+          <a href="https://www.scoutverse.ai/" target="_blank" rel="noopener noreferrer" className="text-fg underline decoration-fg/30 underline-offset-4 transition-colors hover:decoration-fg">
             ScoutVerse.ai
           </a>
           .
